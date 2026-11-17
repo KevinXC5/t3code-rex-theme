@@ -25,7 +25,6 @@
   --context-chip-doc-epub: #58A6FF !important;
   --context-chip-skill: #58A6FF !important;
   --rex-shell: #0F1114;
-  --rex-sidebar-glass: radial-gradient(ellipse 140% 55% at 24% 100%,rgba(116,92,88,0.12),transparent 65%),radial-gradient(ellipse 110% 45% at 75% 0%,rgba(47,129,247,0.06),transparent 60%),linear-gradient(180deg,#0D0F13 0%,#0F1115 58%,#12151B 100%);
   --rex-canvas: #1B1F23;
   --rex-surface: #161A1F;
   --rex-surface-2: #21262D;
@@ -34,13 +33,13 @@
   --rex-border: rgba(255,255,255,0.085);
   --rex-border-strong: rgba(255,255,255,0.14);
   --rex-pane-border: rgba(255,255,255,0.09);
-  --rex-pane-shadow: inset 0 1px 0 rgba(255,255,255,0.055),0 0 0 1px rgba(0,0,0,0.45),0 10px 30px rgba(0,0,0,0.38);
-  --rex-tab-active-bg: linear-gradient(180deg,rgba(255,255,255,0.145) 0%,rgba(255,255,255,0.075) 100%);
-  --rex-tab-active-shadow: inset 0 1px 0 rgba(255,255,255,0.20),inset 0 -1px 0 rgba(255,255,255,0.04),0 0 0 1px rgba(255,255,255,0.10),0 3px 10px rgba(0,0,0,0.36);
-  --rex-composer-outline: rgba(255,255,255,0.14);
-  --rex-composer-outline-focus: rgba(255,255,255,0.24);
-  --rex-composer-highlight: rgba(255,255,255,0.22);
-  --rex-composer-sheen: linear-gradient(180deg,rgba(255,255,255,0.085) 0%,rgba(255,255,255,0.02) 45%,rgba(0,0,0,0.10) 100%);
+  --rex-pane-glass-rim: linear-gradient(155deg,rgba(255,255,255,0.28) 0%,rgba(255,255,255,0.13) 24%,rgba(255,255,255,0.065) 60%,rgba(255,255,255,0.13) 100%);
+  --rex-pane-shadow: inset 0 1px 0 rgba(255,255,255,0.07),0 0 0 1px rgba(0,0,0,0.68),0 10px 30px rgba(0,0,0,0.42);
+  --rex-tab-active-bg: rgba(38,44,53,0.72);
+  --rex-tab-active-shadow: 0 0 0 1px rgba(255,255,255,0.12),0 2px 8px rgba(0,0,0,0.22);
+  --rex-composer-outline: rgba(255,255,255,0.12);
+  --rex-composer-outline-focus: rgba(255,255,255,0.22);
+  --rex-composer-highlight: transparent;
   --rex-accent: #2F81F7;
   --rex-accent-link: #58A6FF;
   --rex-accent-hover: #4493F8;
@@ -56,8 +55,8 @@
   --rex-focus-border: rgba(88,166,255,0.52);
   --rex-focus-glow-search: inset 0 0 0 1px rgba(88,166,255,0.46),inset 0 0 8px rgba(47,129,247,0.08),0 0 10px 0.5px rgba(47,129,247,0.24);
   --rex-focus-glow-input: 0 0 0 1px rgba(88,166,255,0.14),0 0 10px 0.5px rgba(47,129,247,0.24);
-  --rex-shadow-composer: inset 0 1px 0 rgba(255,255,255,0.14),0 8px 26px rgba(0,0,0,0.38);
-  --rex-shadow-composer-focus: inset 0 1px 0 rgba(255,255,255,0.20),0 10px 32px rgba(0,0,0,0.46),0 0 22px rgba(47,129,247,0.16);
+  --rex-shadow-composer: 0 6px 22px rgba(0,0,0,0.28);
+  --rex-shadow-composer-focus: 0 8px 28px rgba(0,0,0,0.36),0 0 18px rgba(47,129,247,0.12);
   --rex-shadow-pop: 0 14px 40px rgba(0,0,0,0.56),0 0 0 1px rgba(255,255,255,0.09);
   --rex-off: #2D333B;
   --rex-off-fg: #6E7681;
@@ -111,7 +110,6 @@
   --context-chip-doc-epub: #0550AE !important;
   --context-chip-skill: #0550AE !important;
   --rex-shell: #EEF1F5;
-  --rex-sidebar-glass: linear-gradient(180deg,#F2F5F9 0%,#ECEFF4 100%);
   --rex-canvas: #FFFFFF;
   --rex-surface: #F6F8FA;
   --rex-surface-2: #F0F3F7;
@@ -120,13 +118,13 @@
   --rex-border: rgba(31,35,40,0.09);
   --rex-border-strong: rgba(31,35,40,0.14);
   --rex-pane-border: rgba(31,35,40,0.11);
-  --rex-pane-shadow: inset 0 1px 0 rgba(255,255,255,0.92),0 2px 10px rgba(31,35,40,0.06),0 8px 24px rgba(31,35,40,0.04);
-  --rex-tab-active-bg: linear-gradient(180deg,rgba(255,255,255,0.96) 0%,rgba(255,255,255,0.84) 100%);
-  --rex-tab-active-shadow: inset 0 1px 0 rgba(255,255,255,1),0 1px 4px rgba(31,35,40,0.09),0 0 0 1px rgba(31,35,40,0.07);
-  --rex-composer-outline: rgba(31,35,40,0.12);
-  --rex-composer-outline-focus: rgba(9,105,218,0.32);
-  --rex-composer-highlight: rgba(255,255,255,0.95);
-  --rex-composer-sheen: linear-gradient(180deg,rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.25) 100%);
+  --rex-pane-glass-rim: linear-gradient(155deg,rgba(255,255,255,0.92) 0%,rgba(31,35,40,0.12) 28%,rgba(31,35,40,0.08) 68%,rgba(255,255,255,0.65) 100%);
+  --rex-pane-shadow: 0 0 0 1px rgba(31,35,40,0.09),0 4px 18px rgba(31,35,40,0.06);
+  --rex-tab-active-bg: rgba(255,255,255,0.85);
+  --rex-tab-active-shadow: 0 0 0 1px rgba(31,35,40,0.10),0 2px 6px rgba(31,35,40,0.06);
+  --rex-composer-outline: rgba(31,35,40,0.11);
+  --rex-composer-outline-focus: rgba(9,105,218,0.30);
+  --rex-composer-highlight: transparent;
   --rex-accent: #0969DA;
   --rex-accent-link: #0969DA;
   --rex-accent-hover: #0550AE;
@@ -255,21 +253,38 @@ a[aria-label="T3 Code home"]::after {
 }
 
 [data-slot="sidebar-inner"] {
-  background: var(--rex-sidebar-glass) !important;
+  background: var(--rex-shell) !important;
+  background-color: var(--rex-shell) !important;
 }
 
 @media (min-width: 768px) {
   main[data-slot="sidebar-inset"] {
+    position: relative !important;
     margin: 7px 7px 7px 4px !important;
     height: auto !important;
     min-height: 0 !important;
     max-height: calc(100svh - 14px) !important;
     align-self: stretch !important;
     border-radius: 12px !important;
-    border: 1px solid var(--rex-pane-border) !important;
+    border: none !important;
     background-color: var(--rex-canvas) !important;
     box-shadow: var(--rex-pane-shadow) !important;
     overflow: hidden !important;
+  }
+
+  main[data-slot="sidebar-inset"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--rex-pane-glass-rim);
+    -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    mask-composite: exclude;
   }
 
   [data-slot="sidebar"]:is([data-state="collapsed"],[data-sidebar-state="collapsed"]) ~ main[data-slot="sidebar-inset"],[data-slot="sidebar-wrapper"][data-sidebar-state="collapsed"] main[data-slot="sidebar-inset"] {
@@ -277,14 +292,16 @@ a[aria-label="T3 Code home"]::after {
   }
 }
 
-:root.dark [data-workspace-area="conversation"] {
-  background: radial-gradient(ellipse 85% 42% at 50% 0%,rgba(47,129,247,0.045),transparent 72%),var(--rex-canvas) !important;
+[data-workspace-area="conversation"] {
+  background: var(--rex-canvas) !important;
+  background-color: var(--rex-canvas) !important;
 }
 
 [data-chat-header] {
-  background-color: color-mix(in srgb,var(--rex-canvas) 84%,transparent) !important;
+  background: var(--rex-canvas) !important;
+  background-color: var(--rex-canvas) !important;
   border-bottom-color: var(--rex-border) !important;
-  backdrop-filter: blur(12px);
+  backdrop-filter: none !important;
 }
 
 /* =========================================================
@@ -367,15 +384,15 @@ a[aria-label="T3 Code home"]::after {
 }
 
 [data-thread-item] [data-sidebar-row] {
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   transition: background-color 0.15s ease,box-shadow 0.15s ease !important;
 }
 
 [data-thread-item] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
   background: var(--rex-tab-active-bg) !important;
   box-shadow: var(--rex-tab-active-shadow) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
 [data-slot="sidebar"] .text-info-foreground {
@@ -505,34 +522,22 @@ a[aria-label="T3 Code home"]::after {
 }
 
 /* =========================================================
-   6. Frosted Liquid-Glass Capsule Composer & Sapphire Pill
+   6. Frosted Glass Composer & Sapphire Squircle Button
    ========================================================= */
 [data-chat-composer-form],[data-chat-composer-form] :is([data-chat-composer-main-surface="true"],[data-slot="composer-host"]) {
   --chat-composer-glass-surface: var(--rex-composer-bg) !important;
   --chat-composer-outline: var(--rex-composer-outline) !important;
   --chat-composer-highlight: var(--rex-composer-highlight) !important;
   --glass-opacity: 72% !important;
-  --glass-blur: 26px !important;
-  --glass-saturation: 170% !important;
+  --glass-blur: 24px !important;
+  --glass-saturation: 160% !important;
 }
 
 :root:not(.dark) [data-chat-composer-form],:root:not(.dark) [data-chat-composer-form] :is([data-chat-composer-main-surface="true"],[data-slot="composer-host"]) {
   --glass-opacity: 82% !important;
 }
 
-[data-slot="composer-host"],[data-chat-composer-main-surface="true"] {
-  border-radius: 24px !important;
-}
-
-[data-slot="composer-host"]::before,[data-chat-composer-main-surface="true"]::before {
-  border-radius: 24px !important;
-  background-image: var(--rex-composer-sheen) !important;
-  backdrop-filter: blur(26px) saturate(170%) !important;
-  -webkit-backdrop-filter: blur(26px) saturate(170%) !important;
-}
-
 [data-slot="composer-host"]::after,[data-chat-composer-main-surface="true"]::after {
-  border-radius: 24px !important;
   transition: border-color 0.2s ease,box-shadow 0.2s ease;
 }
 
@@ -555,11 +560,11 @@ a[aria-label="T3 Code home"]::after {
 }
 
 [data-chat-composer-form] :is(button[type="submit"],button.isolate.rounded-full) {
-  background: linear-gradient(180deg,var(--rex-accent-hover) 0%,var(--rex-accent) 100%) !important;
+  background: var(--rex-accent) !important;
   color: #FFFFFF !important;
   border: none !important;
-  border-radius: 999px !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.34),0 2px 10px rgba(47,129,247,0.38) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(47,129,247,0.30) !important;
   transition: background-color 0.16s ease,transform 0.12s cubic-bezier(0.2,0,0,1),box-shadow 0.16s ease !important;
 }
 

@@ -2,7 +2,7 @@
 
 # T3 Code · Rex 主题
 
-**基于 [Rex](https://rex.superlogical.com) 终端默认视觉语言（`Merino Dark` / `Merino Light` + `BlendTheme`）打造的 [T3 Code](https://t3.codes) 主题——包含深曜石侧边栏外壳、带圆角与微光边框的右置主工作区面板、磨砂高亮会话胶囊、`Maple Mono NF CN` 嵌入式终端代码块，以及 6 档 Comet 流动镭射思考等级系统。**
+**基于 [Rex](https://rex.superlogical.com) 终端默认视觉语言（`Merino Dark` / `Merino Light` + `BlendTheme`）打造的 [T3 Code](https://t3.codes) 主题——包含深曜石侧边栏外壳、带 `12px` 圆角与居中折光边框的右置主工作区面板、全链路液态玻璃控件、`AnthropicSerif + 宋体` 社论级排版，以及 6 档 Comet 流动镭射思考等级系统。**
 
 [English](README.md) · [简体中文](README_zh.md)
 
@@ -13,7 +13,9 @@
   <img alt="License" src="https://img.shields.io/badge/License-MIT-58A6FF?style=flat-square">
 </p>
 
-<img src="assets/hero-preview.svg" alt="Rex 主题预览" width="100%">
+| 暗色模式 (`Merino Dark`) | 浅色模式 (`Merino Light`) |
+| :---: | :---: |
+| <img src="assets/preview-dark.png" alt="Rex 主题暗色模式实机预览" width="100%"> | <img src="assets/preview-light.png" alt="Rex 主题浅色模式实机预览" width="100%"> |
 
 </div>
 
@@ -53,28 +55,27 @@ irm https://raw.githubusercontent.com/KevinXC5/t3code-rex-theme/main/install.ps1
 
 ### 1. 双层曜石外壳与 Rex 风格色板
 
-完整还原 Rex 默认 `Merino Dark` / `Merino Light` 配色与 `BlendTheme` 的冷曜石层次：
+完整还原 Rex 默认 `Merino Dark` / `Merino Light` 配色与 `BlendTheme` 的双层景深：
 
 | 色彩角色 | 暗色模式 (`Merino Dark`) | 浅色模式 (`Merino Light`) | 作用区域 |
 | :--- | :---: | :---: | :--- |
-| **窗口外壳与侧边栏** | `#0F1114` | `#EEF1F5` | 外层深邃冷曜石基底与会话导航 |
-| **右置圆角工作区面板** | `#1B1F23` | `#FFFFFF` | 独立浮起的主对话与代码视口 |
+| **窗口外壳与侧边栏** | `#0F1114` | `#EEF1F5` | 外层统一基底与会话导航 |
+| **右置圆角工作区面板** | `#1B1F23` | `#FFFFFF` | 独立浮起的 `12px` 圆角主视口与居中折光边框 |
 | **代码块与内置终端** | `#0D1117` | `#F6F8FA` | 嵌入式终端质感代码块与终端抽屉 |
-| **输入浮卡** | `#22272E` | `#FFFFFF` | 玻璃板岩输入卡片与电光蓝聚焦光晕 |
+| **液态玻璃控件表面** | `rgba(38,44,53,0.72)` | `rgba(255,255,255,0.96)` | 激活会话行、右上角详情卡、主对话框与徽章按钮 |
 | **主题强调色** | `#2F81F7` | `#0969DA` | Rex 光标蓝——发送按钮、链接、聚焦框、文件树与 Diff |
 | **置顶图钉** | `#FF7B72` | `#CF222E` | Merino ANSI 珊瑚红图钉标识 |
 
-### 2. 右侧圆角面板、边框与磨砂胶囊选中态
+### 2. 居中液态玻璃折光与全链路字体对齐
 
-- **右侧主面板圆角卡片（`12px` 圆角 + `1px` 玻璃边框）**：桌面端下，`main[data-slot="sidebar-inset"]` 以 `7px` 外留白悬浮于 `#0F1114` 外壳之中，配备 `12px` 圆角、`1px` 半透明外边框（暗色模式下为 `rgba(255,255,255,0.09)`）以及顶部微弱内高光。
-- **侧边栏磨砂胶囊选中态**：当前激活会话还原 Rex 左侧 Tab 的磨砂高亮胶囊样式（微渐变底色 + 顶部 `1px` 内高光描边），未激活行保持通透，并保留彩色模型/供应商图标。
-- **技术工程排版与终端字体**：正文采用清晰的 `SF Pro Text` / `Inter` 无衬线体，代码块与内置终端默认优先使用 `Maple Mono NF CN`（自动回退至 `JetBrains Mono` / `SF Mono`）。
+- **右侧圆角面板与居中折光高光**：桌面端下，`main[data-slot="sidebar-inset"]` 以 `7px` 外留白（靠近侧边栏一侧为 `4px`）悬浮于 `#0F1114` / `#EEF1F5` 底板之上，配备 `12px` 圆角及上下边框**从左到中渐强、再向右侧减弱**的 `1px` 液态玻璃折光高光。
+- **全组件统一液态玻璃质感**：侧边栏激活会话行、右上角详情卡片（`[data-thread-details-card]`）、底部主对话框、`T3 [Code]` 徽章与 `New thread` 新建按钮均采用统一的半透磨砂表面与居中折光边框，同时解除激活项 `[data-thread-item]` 的 `content-visibility` 裁切，确保柔和投影不出现直角残影。
+- **对齐 Claude 官方混合字体栈**：AI 回复、标题、引用与表格采用 `AnthropicSerif` / `Tiempos Text` + `Songti SC` 宋体（`15px` 字号 + `1.72` 行高）；UI 控件、用户消息与代码块顶栏使用 `AnthropicSans` + `PingFang SC`；代码块与内置终端使用 `AnthropicMono` / `Maple Mono NF CN` / `JetBrains Mono`。
 
 ### 3. 全链路电光蓝统一与细节打磨
 
-- **`T3 [Code]` 胶囊徽标**：左上角字标重塑为 `T3` + 电光蓝 `Code` 胶囊标签。
-- **统一选区、文件树与 Diff 色彩**：将划词 `::selection`、`@pierre/trees` 选中高亮、`@pierre/diffs` 修改标记与光标、引用标签及 `New thread` 按钮全部统一为 Rex 电光蓝。
-- **清理输入框双层直角框**：移除侧边栏搜索框与项目选择下拉搜索框内部多余的双层直角描边，仅保留平滑的一体化聚焦光晕。
+- **统一选区、文件树与 Diff 色彩**：将划词 `::selection`、`@pierre/trees` 选中高亮、`@pierre/diffs` 修改标记与光标、引用标签与开关控件统一为 Rex 电光蓝。
+- **保留侧栏彩色图标并清理冗余描边**：保留侧边栏全彩供应商图标，移除侧边栏搜索框与项目下拉框内部多余的双层直角描边。
 
 ### 4. 模型选择弹窗与 6 档 Comet 流动镭射思考等级
 
@@ -88,6 +89,13 @@ irm https://raw.githubusercontent.com/KevinXC5/t3code-rex-theme/main/install.ps1
   - **Extra High**：Merino 琥珀金（`#E3B341` / `#9D5C00`）+ 单闪电图标
   - **Max**：Merino 幻紫（`#BC8CFF` / `#8250DF`）+ 皇冠图标
   - **Extra / Ultra / Ultrathink**：Comet 全彩流光闪电 + 斜体 `TURBO` 徽章 + 全谱流动边框
+
+<details>
+<summary>矢量概念示意图（assets/hero-preview.svg）</summary>
+
+<img src="assets/hero-preview.svg" alt="Rex 主题矢量概念示意图" width="100%">
+
+</details>
 
 ---
 

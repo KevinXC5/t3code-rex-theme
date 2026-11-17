@@ -2,7 +2,7 @@
 
 # Rex Theme for T3 Code
 
-**A crisp, terminal-native [Rex](https://rex.superlogical.com)-inspired theme for [T3 Code](https://t3.codes) — featuring a two-tier obsidian shell, an inset `12px` rounded workspace pane with subtle glass borders, `Merino Dark` & `Merino Light` palettes, frosted active tab pills, `Maple Mono NF CN` terminal code blocks, and a 6-tier comet-laser effort selector.**
+**A crisp, terminal-native [Rex](https://rex.superlogical.com)-inspired theme for [T3 Code](https://t3.codes) — featuring a two-tier obsidian shell, an inset `12px` rounded workspace pane with centered Liquid Glass edge refraction, `Merino Dark` & `Merino Light` palettes, Liquid Glass active rows & controls, `AnthropicSerif` + `Songti SC` editorial prose, and a 6-tier comet-laser effort selector.**
 
 [English](README.md) · [简体中文](README_zh.md)
 
@@ -13,7 +13,9 @@
   <img alt="License" src="https://img.shields.io/badge/License-MIT-58A6FF?style=flat-square">
 </p>
 
-<img src="assets/hero-preview.svg" alt="Rex Theme Showcase" width="100%">
+| Dark Mode (`Merino Dark`) | Light Mode (`Merino Light`) |
+| :---: | :---: |
+| <img src="assets/preview-dark.png" alt="Rex Theme Dark Mode Preview" width="100%"> | <img src="assets/preview-light.png" alt="Rex Theme Light Mode Preview" width="100%"> |
 
 </div>
 
@@ -58,22 +60,21 @@ Faithfully translates Rex Terminal's `BlendTheme` + `Merino Dark` / `Merino Ligh
 | Role | Dark Mode (`Merino Dark`) | Light Mode (`Merino Light`) | Purpose |
 | :--- | :---: | :---: | :--- |
 | **Window Shell & Sidebar** | `#0F1114` | `#EEF1F5` | Outer obsidian-slate frame & thread navigation |
-| **Right Workspace Pane** | `#1B1F23` | `#FFFFFF` | Inset `12px` rounded card with `1px` crisp rim & inner specular edge |
+| **Right Workspace Pane** | `#1B1F23` | `#FFFFFF` | Inset `12px` rounded card with centered top/bottom Liquid Glass refraction |
 | **Terminal & Code Blocks** | `#0D1117` | `#F6F8FA` | Embedded terminal-grade code blocks & integrated terminal drawer |
-| **Composer Card** | `#22272E` | `#FFFFFF` | Elevated glass-slate input card with sapphire focus halo |
+| **Frosted Glass Surfaces** | `rgba(38,44,53,0.72)` | `rgba(255,255,255,0.96)` | Active sidebar row, details card, composer & header pill |
 | **Primary Accent** | `#2F81F7` | `#0969DA` | Rex cursor blue — send squircle, links, focus rings, trees & diffs |
 | **Pin Indicator** | `#FF7B72` | `#CF222E` | Merino ANSI coral-red pin icon |
 
-### 2. Frosted Tab Pills & Framed Right Panel
+### 2. Centered Liquid Glass Refraction & Unified Controls
 
-- **Inset `12px` Right Workspace Panel**: On desktop layouts, `main[data-slot="sidebar-inset"]` floats inside the `#0F1114` window shell with `7px` outer gutters, `12px` rounded corners, a `1px` translucent glass border (`rgba(255,255,255,0.09)` in dark mode), and a whisper-subtle top inner specular edge.
-- **Frosted Active Sidebar Pill**: Selected threads adopt Rex's capsule-style active tab treatment (`linear-gradient` frosted fill + subtle top highlight + hairline stroke).
-- **Clean Typography & Embedded Terminal Code**: Pairs crisp `SF Pro Text` / `Inter` technical UI typography with `Maple Mono NF CN` (`JetBrains Mono` / `SF Mono` fallback) for code blocks and integrated terminals.
+- **Inset `12px` Right Workspace Panel**: On desktop layouts, `main[data-slot="sidebar-inset"]` floats inside the unified `#0F1114` / `#EEF1F5` shell with `7px` outer gutters (`4px` beside the sidebar), `12px` rounded corners, and a `1px` masked Liquid Glass rim whose top and bottom highlights peak horizontally at the center and feather smoothly toward both sides.
+- **Unified Liquid Glass Components**: The active sidebar thread row, top-right details card (`[data-thread-details-card]`), bottom composer, `T3 [Code]` pill, and `New thread` button all share the same flat frosted-glass surface and centered top/bottom refraction border — with `content-visibility: visible` on the active `[data-thread-item]` so drop shadows never clip into sharp rectangles.
+- **Editorial Serif + Terminal Typography**: Matches Claude's official typography — `AnthropicSerif` / `Tiempos Text` + `Songti SC` (`15px`, `1.72` line-height) for assistant prose, headings, blockquotes, and tables; `AnthropicSans` + `PingFang SC` for UI controls, user bubbles, work logs, and code block headers; and `AnthropicMono` / `Maple Mono NF CN` / `JetBrains Mono` for code & terminals.
 
 ### 3. Unified Sapphire Accent & UI Polish
 
-- **`T3 [Code]` Brand Pill**: Restyles the top-left home link into `T3` + an electric sapphire `Code` pill badge.
-- **Unified Selection, Trees & Diffs**: Unifies text `::selection`, `@pierre/trees` active rows, `@pierre/diffs` modified markers/carets, citation chips, and `New thread` button into Rex's `#2F81F7` / `#58A6FF` spectrum.
+- **Unified Selection, Trees & Diffs**: Unifies text `::selection`, `@pierre/trees` active rows, `@pierre/diffs` modified markers/carets, citation chips, and switches into Rex's `#2F81F7` / `#58A6FF` spectrum (`#0969DA` in Light Mode).
 - **Full-Color Sidebar Icons & Clean Inputs**: Preserves full-color provider/model badges in the sidebar and strips double inner outlines from sidebar search and dropdown combobox inputs.
 
 ### 4. Redesigned Model Picker & 6-Tier Comet-Laser Effort System
@@ -88,6 +89,13 @@ Faithfully translates Rex Terminal's `BlendTheme` + `Merino Dark` / `Merino Ligh
   - **Extra High**: Merino Amber (`#E3B341` / `#9D5C00`) + Bolt glyph
   - **Max**: Merino Violet (`#BC8CFF` / `#8250DF`) + Crown glyph
   - **Extra / Ultra / Ultrathink**: Comet spectrum bolt + italic `TURBO` badge + full-spectrum flowing laser border
+
+<details>
+<summary>Vector Concept Diagram (assets/hero-preview.svg)</summary>
+
+<img src="assets/hero-preview.svg" alt="Rex Theme Vector Concept Diagram" width="100%">
+
+</details>
 
 ---
 

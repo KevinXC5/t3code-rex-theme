@@ -9,7 +9,7 @@
 <p>
   <img alt="T3 Code Theme" src="https://img.shields.io/badge/T3_Code-Custom_Theme-2F81F7?style=flat-square">
   <img alt="Appearance" src="https://img.shields.io/badge/Appearance-Dark_%26_Light-0F1114?style=flat-square">
-  <img alt="CSS Budget" src="https://img.shields.io/badge/CSS-48.2k_%2F_50k_chars-3FB950?style=flat-square">
+  <img alt="CSS Budget" src="https://img.shields.io/badge/CSS-49.6k_%2F_50k_chars-3FB950?style=flat-square">
   <img alt="License" src="https://img.shields.io/badge/License-MIT-58A6FF?style=flat-square">
 </p>
 

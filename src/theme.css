@@ -32,11 +32,12 @@
   --rex-code-bg: #0D1117;
   --rex-border: rgba(255,255,255,0.085);
   --rex-border-strong: rgba(255,255,255,0.14);
-  --rex-pane-border: rgba(255,255,255,0.09);
-  --rex-pane-glass-rim: linear-gradient(155deg,rgba(255,255,255,0.28) 0%,rgba(255,255,255,0.13) 24%,rgba(255,255,255,0.065) 60%,rgba(255,255,255,0.13) 100%);
-  --rex-pane-shadow: inset 0 1px 0 rgba(255,255,255,0.07),0 0 0 1px rgba(0,0,0,0.68),0 10px 30px rgba(0,0,0,0.42);
-  --rex-tab-active-bg: rgba(38,44,53,0.72);
-  --rex-tab-active-shadow: 0 0 0 1px rgba(255,255,255,0.12),0 2px 8px rgba(0,0,0,0.22);
+  --rex-pane-border: rgba(255,255,255,0.08);
+  --rex-pane-glass-rim: linear-gradient(90deg,transparent 4%,rgba(255,255,255,0.08) 22%,rgba(255,255,255,0.34) 50%,rgba(255,255,255,0.08) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(255,255,255,0.05) 24%,rgba(255,255,255,0.22) 50%,rgba(255,255,255,0.05) 76%,transparent 94%),linear-gradient(rgba(255,255,255,0.075),rgba(255,255,255,0.075));
+  --rex-pane-shadow: 0 0 0 1px rgba(0,0,0,0.68),0 10px 30px rgba(0,0,0,0.42);
+  --rex-tab-active-bg: rgba(43,47,54,0.82);
+  --rex-tab-active-rim: linear-gradient(150deg,rgba(255,255,255,0.34) 0%,rgba(255,255,255,0.10) 34%,rgba(255,255,255,0.06) 66%,rgba(255,255,255,0.26) 100%);
+  --rex-tab-active-shadow: inset 0 1px 0 rgba(255,255,255,0.08),0 2px 10px rgba(0,0,0,0.38),0 0 0 1px rgba(0,0,0,0.35);
   --rex-composer-outline: rgba(255,255,255,0.12);
   --rex-composer-outline-focus: rgba(255,255,255,0.22);
   --rex-composer-highlight: transparent;
@@ -117,11 +118,12 @@
   --rex-code-bg: #F6F8FA;
   --rex-border: rgba(31,35,40,0.09);
   --rex-border-strong: rgba(31,35,40,0.14);
-  --rex-pane-border: rgba(31,35,40,0.11);
-  --rex-pane-glass-rim: linear-gradient(155deg,rgba(255,255,255,0.92) 0%,rgba(31,35,40,0.12) 28%,rgba(31,35,40,0.08) 68%,rgba(255,255,255,0.65) 100%);
-  --rex-pane-shadow: 0 0 0 1px rgba(31,35,40,0.09),0 4px 18px rgba(31,35,40,0.06);
-  --rex-tab-active-bg: rgba(255,255,255,0.85);
-  --rex-tab-active-shadow: 0 0 0 1px rgba(31,35,40,0.10),0 2px 6px rgba(31,35,40,0.06);
+  --rex-pane-border: rgba(31,35,40,0.10);
+  --rex-pane-glass-rim: linear-gradient(90deg,transparent 4%,rgba(255,255,255,0.55) 22%,rgba(255,255,255,0.98) 50%,rgba(255,255,255,0.55) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(255,255,255,0.4) 24%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.4) 76%,transparent 94%),linear-gradient(rgba(15,23,42,0.08),rgba(15,23,42,0.08));
+  --rex-pane-shadow: 0 0 0 1px rgba(15,23,42,0.05),0 2px 12px rgba(15,23,42,0.05);
+  --rex-tab-active-bg: rgba(255,255,255,0.94);
+  --rex-tab-active-rim: linear-gradient(150deg,rgba(255,255,255,1) 0%,rgba(15,23,42,0.10) 36%,rgba(15,23,42,0.07) 64%,rgba(255,255,255,0.95) 100%);
+  --rex-tab-active-shadow: inset 0 1px 0 rgba(255,255,255,1),0 2px 8px rgba(15,23,42,0.09),0 1px 2px rgba(15,23,42,0.05),0 0 0 0.5px rgba(15,23,42,0.06);
   --rex-composer-outline: rgba(31,35,40,0.11);
   --rex-composer-outline-focus: rgba(9,105,218,0.30);
   --rex-composer-highlight: transparent;
@@ -281,6 +283,9 @@ a[aria-label="T3 Code home"]::after {
     border-radius: inherit;
     padding: 1px;
     background: var(--rex-pane-glass-rim);
+    background-size: 100% 12px,100% 12px,100% 100%;
+    background-position: top center,bottom center,center;
+    background-repeat: no-repeat;
     -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
@@ -383,16 +388,33 @@ a[aria-label="T3 Code home"]::after {
   transform: scale(0.95);
 }
 
-[data-thread-item] [data-sidebar-row] {
-  border-radius: 10px !important;
+[data-thread-item] [data-sidebar-row],[data-slot="sidebar"] [data-sidebar-row] {
+  border-radius: 12px !important;
   transition: background-color 0.15s ease,box-shadow 0.15s ease !important;
 }
 
-[data-thread-item] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
+[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
+  position: relative !important;
+  border-radius: 12px !important;
   background: var(--rex-tab-active-bg) !important;
   box-shadow: var(--rex-tab-active-shadow) !important;
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--rex-tab-active-rim);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
 
 [data-slot="sidebar"] .text-info-foreground {

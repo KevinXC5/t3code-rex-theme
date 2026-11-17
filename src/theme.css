@@ -404,8 +404,7 @@ main[data-slot="sidebar-inset"]::before {
   border-radius: 12px !important;
   background: var(--rex-tab-active-bg) !important;
   box-shadow: var(--rex-tab-active-shadow) !important;
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  --tw-ring-shadow: 0 0 #0000 !important;
 }
 
 [data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before {

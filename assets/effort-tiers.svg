@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 492" width="1120" height="492" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', 'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1114"/>
+      <stop offset="100%" stop-color="#1B1F23"/>
+    </linearGradient>
+    <linearGradient id="lLow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#56D364"/>
+      <stop offset="50%" stop-color="#3FB950"/>
+      <stop offset="100%" stop-color="#39C5CF"/>
+    </linearGradient>
+    <linearGradient id="lMed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#79C0FF"/>
+      <stop offset="50%" stop-color="#2F81F7"/>
+      <stop offset="100%" stop-color="#56D4DD"/>
+    </linearGradient>
+    <linearGradient id="lHigh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA198"/>
+      <stop offset="50%" stop-color="#FF7B72"/>
+      <stop offset="100%" stop-color="#F778BA"/>
+    </linearGradient>
+    <linearGradient id="lXhigh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2CC60"/>
+      <stop offset="50%" stop-color="#D29922"/>
+      <stop offset="100%" stop-color="#FF9B70"/>
+    </linearGradient>
+    <linearGradient id="lMax" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D2A8FF"/>
+      <stop offset="50%" stop-color="#BC8CFF"/>
+      <stop offset="100%" stop-color="#79C0FF"/>
+    </linearGradient>
+    <linearGradient id="lHolo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#56D4DD"/>
+      <stop offset="25%" stop-color="#58A6FF"/>
+      <stop offset="50%" stop-color="#BC8CFF"/>
+      <stop offset="75%" stop-color="#F778BA"/>
+      <stop offset="100%" stop-color="#56D364"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1120" height="492" rx="20" fill="url(#bg2)" stroke="rgba(255,255,255,0.09)"/>
+
+  <!-- Header -->
+  <text x="36" y="44" fill="#E6EDF3" font-size="20" font-weight="700">6-Tier Thinking Level Spectrum · Merino ANSI Palette &amp; Comet Laser Rims</text>
+  <text x="36" y="68" fill="#8B949E" font-size="12.5">Synced across the bottom composer pill (14px optically centered glyph) and active [aria-checked="true"] picker pills (15px)</text>
+
+  <!-- Card 1: Low -->
+  <g transform="translate(36, 92)">
+    <rect width="336" height="122" rx="14" fill="#161A1F" stroke="rgba(255,255,255,0.08)"/>
+    <text x="18" y="28" fill="#8B949E" font-size="10.5" font-weight="700">TIER 1 · LOW / MINIMAL</text>
+    <rect x="18" y="42" width="118" height="32" rx="8.5" fill="#1A2029" stroke="url(#lLow)" stroke-width="1.3"/>
+    <circle cx="35" cy="58" r="5" fill="#3FB950"/>
+    <text x="48" y="62.5" fill="#3FB950" font-size="13" font-weight="600">Low</text>
+    <rect x="148" y="42" width="106" height="32" rx="8.5" fill="#FFFFFF" stroke="url(#lLow)" stroke-width="1.3"/>
+    <circle cx="164" cy="58" r="5" fill="#1A7F37"/>
+    <text x="176" y="62.5" fill="#1A7F37" font-size="12.5" font-weight="600">Light</text>
+    <text x="18" y="102" fill="#8B949E" font-size="11">Merino Green (#3FB950 / #1A7F37) · Feather</text>
+  </g>
+
+  <!-- Card 2: Medium -->
+  <g transform="translate(392, 92)">
+    <rect width="336" height="122" rx="14" fill="#161A1F" stroke="rgba(88,166,255,0.28)"/>
+    <text x="18" y="28" fill="#58A6FF" font-size="10.5" font-weight="700">TIER 2 · MEDIUM (REX SAPPHIRE)</text>
+    <rect x="18" y="42" width="128" height="32" rx="8.5" fill="#1A2029" stroke="url(#lMed)" stroke-width="1.3"/>
+    <circle cx="35" cy="58" r="5" fill="#58A6FF"/>
+    <text x="48" y="62.5" fill="#58A6FF" font-size="13" font-weight="600">Medium</text>
+    <rect x="158" y="42" width="106" height="32" rx="8.5" fill="#FFFFFF" stroke="url(#lMed)" stroke-width="1.3"/>
+    <circle cx="174" cy="58" r="5" fill="#0969DA"/>
+    <text x="186" y="62.5" fill="#0969DA" font-size="12.5" font-weight="600">Light</text>
+    <text x="18" y="102" fill="#8B949E" font-size="11">Sapphire Blue (#58A6FF / #0969DA) · Dual Sparkles</text>
+  </g>
+
+  <!-- Card 3: High -->
+  <g transform="translate(748, 92)">
+    <rect width="336" height="122" rx="14" fill="#161A1F" stroke="rgba(255,123,114,0.26)"/>
+    <text x="18" y="28" fill="#FF7B72" font-size="10.5" font-weight="700">TIER 3 · HIGH</text>
+    <rect x="18" y="42" width="118" height="32" rx="8.5" fill="#1A2029" stroke="url(#lHigh)" stroke-width="1.3"/>
+    <circle cx="35" cy="58" r="5" fill="#FF7B72"/>
+    <text x="48" y="62.5" fill="#FF7B72" font-size="13" font-weight="600">High</text>
+    <rect x="148" y="42" width="106" height="32" rx="8.5" fill="#FFFFFF" stroke="url(#lHigh)" stroke-width="1.3"/>
+    <circle cx="164" cy="58" r="5" fill="#CF222E"/>
+    <text x="176" y="62.5" fill="#CF222E" font-size="12.5" font-weight="600">Light</text>
+    <text x="18" y="102" fill="#8B949E" font-size="11">Merino Coral Red (#FF7B72 / #CF222E) · Flame</text>
+  </g>
+
+  <!-- Card 4: Extra High -->
+  <g transform="translate(36, 232)">
+    <rect width="336" height="122" rx="14" fill="#161A1F" stroke="rgba(255,255,255,0.08)"/>
+    <text x="18" y="28" fill="#E3B341" font-size="10.5" font-weight="700">TIER 4 · EXTRA HIGH</text>
+    <rect x="18" y="42" width="136" height="32" rx="8.5" fill="#1A2029" stroke="url(#lXhigh)" stroke-width="1.3"/>
+    <circle cx="35" cy="58" r="5" fill="#E3B341"/>
+    <text x="48" y="62.5" fill="#E3B341" font-size="13" font-weight="600">Extra High</text>
+    <rect x="166" y="42" width="106" height="32" rx="8.5" fill="#FFFFFF" stroke="url(#lXhigh)" stroke-width="1.3"/>
+    <circle cx="182" cy="58" r="5" fill="#9D5C00"/>
+    <text x="194" y="62.5" fill="#9D5C00" font-size="12.5" font-weight="600">Light</text>
+    <text x="18" y="102" fill="#8B949E" font-size="11">Merino Amber (#E3B341 / #9D5C00) · Bolt</text>
+  </g>
+
+  <!-- Card 5: Max -->
+  <g transform="translate(392, 232)">
+    <rect width="336" height="122" rx="14" fill="#161A1F" stroke="rgba(255,255,255,0.08)"/>
+    <text x="18" y="28" fill="#BC8CFF" font-size="10.5" font-weight="700">TIER 5 · MAX</text>
+    <rect x="18" y="42" width="118" height="32" rx="8.5" fill="#1A2029" stroke="url(#lMax)" stroke-width="1.3"/>
+    <circle cx="35" cy="58" r="5" fill="#BC8CFF"/>
+    <text x="48" y="62.5" fill="#BC8CFF" font-size="13" font-weight="600">Max</text>
+    <rect x="148" y="42" width="106" height="32" rx="8.5" fill="#FFFFFF" stroke="url(#lMax)" stroke-width="1.3"/>
+    <circle cx="164" cy="58" r="5" fill="#8250DF"/>
+    <text x="176" y="62.5" fill="#8250DF" font-size="12.5" font-weight="600">Light</text>
+    <text x="18" y="102" fill="#8B949E" font-size="11">Merino Violet (#BC8CFF / #8250DF) · Crown</text>
+  </g>
+
+  <!-- Card 6: Ultra TURBO -->
+  <g transform="translate(748, 232)">
+    <rect width="336" height="122" rx="14" fill="#161A1F" stroke="rgba(188,140,255,0.34)"/>
+    <text x="18" y="28" fill="#D2A8FF" font-size="10.5" font-weight="700">TIER 6 · COMET TURBO</text>
+    <rect x="18" y="42" width="160" height="32" rx="8.5" fill="#1A2029" stroke="url(#lHolo)" stroke-width="1.4"/>
+    <path d="M37 49l-5 8h4l-.8 5 5.2-7.5h-4z" fill="url(#lHolo)"/>
+    <text x="49" y="62.5" fill="#EDF4FF" font-size="13" font-weight="600">Ultra</text>
+    <rect x="92" y="50" width="44" height="15" rx="4" fill="url(#lHolo)"/>
+    <text x="97" y="60.5" fill="#0D1117" font-size="8.5" font-weight="800" font-style="italic">TURBO</text>
+    <rect x="190" y="42" width="106" height="32" rx="8.5" fill="#FFFFFF" stroke="url(#lHolo)" stroke-width="1.4"/>
+    <circle cx="206" cy="58" r="5" fill="#0969DA"/>
+    <text x="218" y="62.5" fill="#1F2328" font-size="12.5" font-weight="600">Light</text>
+    <text x="18" y="102" fill="#8B949E" font-size="11">Comet Spectrum Laser · Delimiter-safe matching</text>
+  </g>
+
+  <!-- Bottom Notes Banner -->
+  <rect x="36" y="376" width="1048" height="82" rx="12" fill="#12151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="56" y="408" fill="#E6EDF3" font-size="13.5" font-weight="600">Rex Layout Craft: Two-Tier Obsidian Shell + 12px Inset Workspace Pane</text>
+  <text x="56" y="434" fill="#8B949E" font-size="12">Deep #0F1114 sidebar with frosted glass active tab pills frames the #1B1F23 rounded main pane and #0D1117 terminal-grade code blocks.</text>
+</svg>

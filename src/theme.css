@@ -797,7 +797,6 @@ div:has(> [data-model-picker-effort]) {
   flex: 0 0 15px;
   width: 15px;
   height: 15px;
-  transform: translateY(0.5px);
   background-color: currentColor;
   opacity: 0.9;
   transition: transform 0.18s ease,opacity 0.18s ease;
@@ -815,7 +814,7 @@ div:has(> [data-model-picker-effort]) {
 
 [data-model-picker-effort] [data-effort-level][aria-checked="true"]::before {
   opacity: 1;
-  transform: translateY(0.5px) scale(1.06);
+  transform: scale(1.06);
 }
 
 [data-model-picker-effort] [data-effort-level]:nth-of-type(1)::before {
@@ -950,7 +949,7 @@ div:has(> [data-model-picker-effort]) {
   gap: 4.5px !important;
   max-width: 156px !important;
   height: 22px !important;
-  /* 文字视觉重心补偿：整体内容上移 1px，::before 图标下移 1px 回几何正中心 */
+  /* 轻微底部留白以对齐文字光学中心，图标与文字同轴居中不额外下移 */
   padding: 0 8px 2px 6px !important;
   border-radius: 7px !important;
   background: rgba(255,255,255,0.065) !important;
@@ -977,7 +976,6 @@ div:has(> [data-model-picker-effort]) {
   width: 12px !important;
   height: 12px !important;
   margin: 0 !important;
-  transform: translateY(1px) !important;
   background-color: currentColor;
   opacity: 0.96;
 }

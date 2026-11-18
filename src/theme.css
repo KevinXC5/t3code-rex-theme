@@ -208,24 +208,30 @@ svg.lucide {
   stroke-linejoin: round;
 }
 
-a[aria-label="T3 Code home"] {
+a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"])) {
   gap: 5px;
   align-items: center;
+  & > span {
+    display: none !important;
+  }
+  &::before {
+    content: "T3";
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--rex-text);
+  }
+  &::after {
+    content: "Code";
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 1px 7px;
+    border-radius: 999px;
+  }
 }
 
-a[aria-label="T3 Code home"] > span {
-  display: none !important;
-}
-
-a[aria-label="T3 Code home"]::before {
-  content: "T3";
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--rex-text);
-}
-
-a[aria-label="T3 Code home"]::after,[data-slot="sidebar"] [aria-label="New thread"] {
+a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-slot="sidebar"] :is([aria-label="New thread"],div:has(> div input[type="search"]) button:has(svg.lucide-square-pen)) {
   border: 1px solid transparent !important;
   background-color: transparent !important;
   background-image: linear-gradient(var(--rex-tab-active-bg),var(--rex-tab-active-bg)),var(--rex-glass-rim) !important;
@@ -236,15 +242,6 @@ a[aria-label="T3 Code home"]::after,[data-slot="sidebar"] [aria-label="New threa
   background-repeat: no-repeat !important;
   box-shadow: var(--rex-tab-active-shadow) !important;
   color: var(--rex-accent-link) !important;
-}
-
-a[aria-label="T3 Code home"]::after {
-  content: "Code";
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  padding: 1px 7px;
-  border-radius: 999px;
 }
 
 /* =========================================================
@@ -364,7 +361,7 @@ main[data-slot="sidebar-inset"]::before {
   line-height: inherit !important;
 }
 
-[data-slot="sidebar"] [aria-label="New thread"] {
+[data-slot="sidebar"] :is([aria-label="New thread"],div:has(> div input[type="search"]) button:has(svg.lucide-square-pen)) {
   width: 31px !important;
   height: 31px !important;
   min-width: 31px !important;
@@ -372,27 +369,23 @@ main[data-slot="sidebar-inset"]::before {
   margin-left: 3px !important;
   border-radius: 9px !important;
   transition: transform 0.12s cubic-bezier(0.2,0,0,1),box-shadow 0.18s ease !important;
-}
-
-[data-slot="sidebar"] [aria-label="New thread"] svg {
-  width: 16px !important;
-  height: 16px !important;
-  color: var(--rex-accent-link) !important;
-  stroke: var(--rex-accent-link) !important;
-  stroke-width: 1.75 !important;
-}
-
-[data-slot="sidebar"] [aria-label="New thread"]:hover:not(:disabled) {
-  background-image: linear-gradient(var(--rex-tab-active-bg),var(--rex-tab-active-bg)),var(--rex-glass-rim-focus) !important;
-}
-
-[data-slot="sidebar"] [aria-label="New thread"]:hover:not(:disabled) svg {
-  color: var(--rex-accent) !important;
-  stroke: var(--rex-accent) !important;
-}
-
-[data-slot="sidebar"] [aria-label="New thread"]:active:not(:disabled) {
-  transform: scale(0.95);
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+    color: var(--rex-accent-link) !important;
+    stroke: var(--rex-accent-link) !important;
+    stroke-width: 1.75 !important;
+  }
+  &:hover:not(:disabled) {
+    background-image: linear-gradient(var(--rex-tab-active-bg),var(--rex-tab-active-bg)),var(--rex-glass-rim-focus) !important;
+    svg {
+      color: var(--rex-accent) !important;
+      stroke: var(--rex-accent) !important;
+    }
+  }
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
 }
 
 [data-thread-item]:has([aria-current="page"],[aria-current="true"]) {
@@ -440,19 +433,29 @@ main[data-slot="sidebar-inset"]::before {
   color: var(--rex-accent-link) !important;
 }
 
-[data-thread-item] button[aria-label="Unpin thread"] > svg,[data-thread-item] svg[aria-label="Pinned"],[data-slot="sidebar"] button[title^="Unpin "] > svg {
+[data-thread-item] button:is([aria-label="Unpin thread"],[class*="group/unpin"]),[data-slot="sidebar"] :is(button[title^="Unpin "],span[class*="group/pin"]:has(svg.lucide-pin-off) button) {
+  & > svg {
+    color: var(--rex-pin) !important;
+    stroke-width: 1.45 !important;
+    transition: color 0.15s ease,transform 0.15s ease,opacity 0.15s ease;
+  }
+  & > svg:first-child path {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+  &:is(:hover,:focus-visible) > svg {
+    color: var(--rex-pin-hover) !important;
+  }
+}
+
+[data-thread-item] svg:is([aria-label="Pinned"],.lucide-pin) {
   color: var(--rex-pin) !important;
   stroke-width: 1.45 !important;
   transition: color 0.15s ease,transform 0.15s ease,opacity 0.15s ease;
-}
-
-[data-thread-item] button[aria-label="Unpin thread"] > svg:first-child path,[data-thread-item] svg[aria-label="Pinned"] path,[data-slot="sidebar"] button[title^="Unpin "] > svg:first-child path {
-  fill: currentColor !important;
-  stroke: currentColor !important;
-}
-
-[data-thread-item] button[aria-label="Unpin thread"]:hover > svg,[data-thread-item] button[aria-label="Unpin thread"]:focus-visible > svg,[data-slot="sidebar"] button[title^="Unpin "]:hover > svg,[data-slot="sidebar"] button[title^="Unpin "]:focus-visible > svg {
-  color: var(--rex-pin-hover) !important;
+  path {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
 }
 
 [data-thread-item] :is(.grayscale,[class*="grayscale"]) {

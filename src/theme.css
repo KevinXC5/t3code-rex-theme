@@ -767,12 +767,13 @@ div:has(> [data-model-picker-effort]) {
   justify-content: center !important;
   align-items: center !important;
   gap: 5px !important;
-  padding: 0 9px !important;
+  padding: 0 9px 1px !important;
   white-space: nowrap;
   border: none !important;
   border-radius: 8px !important;
   font-size: 12px !important;
   font-weight: 500 !important;
+  text-box: normal !important;
   color: var(--rex-muted) !important;
   background: transparent !important;
   transition: background-color 0.18s ease,color 0.18s ease,box-shadow 0.18s ease,transform 0.12s ease !important;
@@ -796,6 +797,7 @@ div:has(> [data-model-picker-effort]) {
   flex: 0 0 15px;
   width: 15px;
   height: 15px;
+  transform: translateY(0.5px);
   background-color: currentColor;
   opacity: 0.9;
   transition: transform 0.18s ease,opacity 0.18s ease;
@@ -813,7 +815,7 @@ div:has(> [data-model-picker-effort]) {
 
 [data-model-picker-effort] [data-effort-level][aria-checked="true"]::before {
   opacity: 1;
-  transform: scale(1.06);
+  transform: translateY(0.5px) scale(1.06);
 }
 
 [data-model-picker-effort] [data-effort-level]:nth-of-type(1)::before {
@@ -920,7 +922,7 @@ div:has(> [data-model-picker-effort]) {
 }
 
 /* =========================================================
-   8. Bottom Composer Effort Pill (14px Icons + Laser Rim)
+   8. Bottom Composer Effort Pill (12px Icons + Laser Rim)
    ========================================================= */
 [data-chat-composer-form] [data-chat-provider-model-picker="true"] > span > span:has(> [data-composer-control-label]:not([data-composer-secondary-trait]),> [data-composer-effort-glyph]) {
   position: relative;
@@ -948,7 +950,8 @@ div:has(> [data-model-picker-effort]) {
   gap: 4.5px !important;
   max-width: 156px !important;
   height: 22px !important;
-  padding: 0 8px 0 6px !important;
+  /* 文字视觉重心补偿：整体内容上移 1px，::before 图标下移 1px 回几何正中心 */
+  padding: 0 8px 2px 6px !important;
   border-radius: 7px !important;
   background: rgba(255,255,255,0.065) !important;
   border: 1px solid var(--rex-border) !important;
@@ -956,6 +959,8 @@ div:has(> [data-model-picker-effort]) {
   font-size: 11.5px !important;
   font-weight: 500 !important;
   line-height: 1 !important;
+  white-space: nowrap !important;
+  text-box: normal !important;
   transition: background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease,box-shadow 0.15s ease !important;
 }
 
@@ -968,10 +973,11 @@ div:has(> [data-model-picker-effort]) {
 [data-chat-composer-form] [data-chat-provider-model-picker="true"] [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
   content: "";
   display: none;
-  flex: 0 0 14px !important;
-  width: 14px !important;
-  height: 14px !important;
+  flex: 0 0 12px !important;
+  width: 12px !important;
+  height: 12px !important;
   margin: 0 !important;
+  transform: translateY(1px) !important;
   background-color: currentColor;
   opacity: 0.96;
 }

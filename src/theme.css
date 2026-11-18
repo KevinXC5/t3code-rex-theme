@@ -96,6 +96,9 @@
 }
 
 :root:not(.dark),:root:not(.dark) body {
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  --contrast-foreground: #181C21 !important;
+  --contrast-muted-foreground: #4B535E !important;
   --info: #0969DA !important;
   --info-foreground: #0550AE !important;
   --info-surface: rgba(9,105,218,0.10) !important;
@@ -109,21 +112,21 @@
   --context-chip-doc-word: #0550AE !important;
   --context-chip-doc-epub: #0550AE !important;
   --context-chip-skill: #0550AE !important;
-  --rex-shell: #EEF1F5;
+  --rex-shell: #FAFAFA;
   --rex-canvas: #FFFFFF;
-  --rex-surface: #F6F8FA;
-  --rex-surface-2: #F0F3F7;
-  --rex-composer-bg: rgba(255,255,255,0.78);
+  --rex-surface: #F5F6F8;
+  --rex-surface-2: #EFEFF2;
+  --rex-composer-bg: rgba(255,255,255,0.84);
   --rex-code-bg: #F6F8FA;
   --rex-border: rgba(31,35,40,0.09);
   --rex-border-strong: rgba(31,35,40,0.14);
   --rex-glass-rim: linear-gradient(90deg,transparent 4%,rgba(15,23,42,0.10) 22%,rgba(15,23,42,0.28) 50%,rgba(15,23,42,0.10) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(15,23,42,0.07) 24%,rgba(15,23,42,0.20) 50%,rgba(15,23,42,0.07) 76%,transparent 94%),linear-gradient(rgba(15,23,42,0.12),rgba(15,23,42,0.12));
   --rex-glass-rim-focus: linear-gradient(90deg,transparent 4%,rgba(9,105,218,0.14) 22%,rgba(9,105,218,0.38) 50%,rgba(9,105,218,0.14) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(9,105,218,0.08) 24%,rgba(9,105,218,0.24) 50%,rgba(9,105,218,0.08) 76%,transparent 94%),linear-gradient(rgba(9,105,218,0.18),rgba(9,105,218,0.18));
   --rex-divider-rim: linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.18) 8%,rgba(15,23,42,0.22) 26%,rgba(15,23,42,0.36) 50%,rgba(15,23,42,0.22) 74%,rgba(15,23,42,0.18) 92%,transparent 100%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.09) 8%,rgba(15,23,42,0.12) 26%,rgba(15,23,42,0.20) 50%,rgba(15,23,42,0.12) 74%,rgba(15,23,42,0.09) 92%,transparent 100%) bottom / 100% 1px no-repeat;
-  --rex-pane-shadow: 0 0 0 1px rgba(15,23,42,0.05),0 2px 12px rgba(15,23,42,0.05);
-  --rex-tab-active-bg: rgba(255,255,255,0.96);
-  --rex-glass-card-bg: rgba(255,255,255,0.94);
-  --rex-tab-active-shadow: 0 2px 10px rgba(15,23,42,0.10),0 1px 2px rgba(15,23,42,0.06);
+  --rex-pane-shadow: 0 0 0 1px rgba(15,23,42,0.075),0 2px 12px rgba(15,23,42,0.05);
+  --rex-tab-active-bg: #FFFFFF;
+  --rex-glass-card-bg: rgba(255,255,255,0.96);
+  --rex-tab-active-shadow: 0 2px 8px rgba(15,23,42,0.08),0 1px 2px rgba(15,23,42,0.05);
   --rex-accent: #0969DA;
   --rex-accent-link: #0969DA;
   --rex-accent-hover: #0550AE;
@@ -134,22 +137,22 @@
   --rex-cyan: #1B7C83;
   --rex-pin: #CF222E;
   --rex-pin-hover: #A40E26;
-  --rex-text: #1F2328;
-  --rex-muted: #57606A;
+  --rex-text: #181C21;
+  --rex-muted: #4B535E;
   --rex-focus-border: rgba(9,105,218,0.48);
   --rex-focus-glow-search: inset 0 0 0 1px rgba(9,105,218,0.42),inset 0 0 8px rgba(9,105,218,0.05),0 0 10px 0.5px rgba(9,105,218,0.16);
   --rex-focus-glow-input: 0 0 0 1px rgba(9,105,218,0.10),0 0 10px 0.5px rgba(9,105,218,0.15);
   --rex-shadow-composer: 0 2px 10px rgba(31,35,40,0.04),0 8px 24px rgba(31,35,40,0.05);
   --rex-shadow-composer-focus: 0 0 0 1px rgba(9,105,218,0.12),0 0 14px 1px rgba(9,105,218,0.16),0 6px 22px rgba(31,35,40,0.07);
   --rex-shadow-pop: 0 12px 36px rgba(31,35,40,0.12),0 0 0 1px rgba(31,35,40,0.08);
-  --rex-off: #EAEFF4;
-  --rex-off-fg: #8C959F;
+  --rex-off: #EAECEF;
+  --rex-off-fg: #6E7681;
   --rex-switch-off-bg: #D0D7DE;
   --rex-switch-off-hover: #BFC7D0;
   --rex-switch-off-border: rgba(31,35,40,0.08);
   --rex-switch-thumb-off: #FFFFFF;
-  --rex-effort-panel-bg: #F6F8FA;
-  --rex-track-bg: #EAEFF4;
+  --rex-effort-panel-bg: #F6F7F9;
+  --rex-track-bg: #EAECEF;
   --rex-pill-active-bg: #FFFFFF;
   --rex-effort-low: #1A7F37;
   --rex-effort-low-laser: linear-gradient(125deg,#1A7F37 0%,#10B981 40%,#1B7C83 78%,#1A7F37 100%);
@@ -414,6 +417,17 @@ main[data-slot="sidebar-inset"]::before {
   z-index: 2;
 }
 
+:root:not(.dark) [data-slot="sidebar"] {
+  --sidebar-foreground: #181C21 !important;
+  --sidebar-muted-foreground: #4B535E !important;
+  --contrast-sidebar-foreground: #181C21 !important;
+  --contrast-sidebar-muted-foreground: #4B535E !important;
+}
+
+:root:not(.dark) [data-slot="sidebar"] [data-sidebar-row] {
+  color: #1F2328 !important;
+}
+
 :root:not(.dark) [data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
   color: #0F172A !important;
   --muted-foreground: #475569 !important;
@@ -537,6 +551,10 @@ main[data-slot="sidebar-inset"]::before {
 
 .chat-markdown .chat-markdown-codeblock-header {
   font-family: var(--font-sans);
+}
+
+:root:not(.dark) :is(.chat-markdown,[data-user-message-bubble],.composer-tiptap) {
+  color: var(--rex-text);
 }
 
 .chat-markdown p + p {

@@ -921,188 +921,226 @@ div:has(> [data-model-picker-effort]) {
 }
 
 /* =========================================================
-   8. Bottom Composer Effort Pill (12px Icons + Laser Rim)
+   8. 输入栏 Effort 与 Fast 胶囊
    ========================================================= */
-[data-chat-composer-form] [data-chat-provider-model-picker="true"] > span > span:has(> [data-composer-control-label]:not([data-composer-secondary-trait]),> [data-composer-effort-glyph]) {
+[data-chat-composer-form] [data-chat-provider-model-picker] > span > span:has(> [data-composer-control-label]:not([data-composer-secondary-trait]),> [data-composer-effort-glyph]) {
   position: relative;
   margin-left: 3px !important;
   padding-left: 9px !important;
   gap: 5px !important;
-}
 
-[data-chat-composer-form] [data-chat-provider-model-picker="true"] > span > span:has(> [data-composer-control-label]:not([data-composer-secondary-trait]),> [data-composer-effort-glyph])::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 12px;
-  background-color: var(--rex-border-strong);
-}
-
-[data-chat-composer-form] [data-chat-provider-model-picker="true"] [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-  gap: 4.5px !important;
-  max-width: 156px !important;
-  height: 22px !important;
-  /* 轻微底部留白以对齐文字光学中心，图标与文字同轴居中不额外下移 */
-  padding: 0 8px 2px 6px !important;
-  border-radius: 7px !important;
-  background: rgba(255,255,255,0.065) !important;
-  border: 1px solid var(--rex-border) !important;
-  color: #CDD9E5 !important;
-  font-size: 11.5px !important;
-  font-weight: 500 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  text-box: normal !important;
-  transition: background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease,box-shadow 0.15s ease !important;
-}
-
-:root:not(.dark) [data-chat-composer-form] [data-chat-provider-model-picker="true"] [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  background: rgba(31,35,40,0.05) !important;
-  border-color: var(--rex-border) !important;
-  color: #24292F !important;
-}
-
-[data-chat-composer-form] [data-chat-provider-model-picker="true"] [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  content: "";
-  display: none;
-  flex: 0 0 12px !important;
-  width: 12px !important;
-  height: 12px !important;
-  margin: 0 !important;
-  background-color: currentColor;
-  opacity: 0.96;
-}
-
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Low"],[aria-label*="· Low"],[aria-label="Low"],[aria-label*=", Minimal"],[aria-label*="· Minimal"],[aria-label="Minimal"],[aria-label*=", Medium"],[aria-label*="· Medium"],[aria-label="Medium"],[aria-label*=", High"],[aria-label*="· High"],[aria-label="High"],[aria-label*=", Extra High"],[aria-label*="· Extra High"],[aria-label="Extra High"],[aria-label*=", Max"],[aria-label*="· Max"],[aria-label="Max"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  border: 1px solid transparent !important;
-  background-color: transparent !important;
-  background-size: 100% 100%,240% 240% !important;
-  background-origin: padding-box,border-box !important;
-  background-clip: padding-box,border-box !important;
-  font-weight: 600 !important;
-  animation: rex-laser-flow 4.5s ease-in-out infinite !important;
-}
-
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Low"],[aria-label*="· Low"],[aria-label="Low"],[aria-label*=", Minimal"],[aria-label*="· Minimal"],[aria-label="Minimal"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  background-image: linear-gradient(var(--rex-laser-surface),var(--rex-laser-surface)),var(--rex-effort-low-laser) !important;
-  color: var(--rex-effort-low) !important;
-  box-shadow: 0 0 9px rgba(63,185,80,0.16),0 1px 4px rgba(0,0,0,0.24) !important;
   &::before {
-    display: block !important;
-    background-color: var(--rex-effort-low);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background-color: var(--rex-border-strong);
   }
-}
 
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Medium"],[aria-label*="· Medium"],[aria-label="Medium"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  background-image: linear-gradient(var(--rex-laser-surface),var(--rex-laser-surface)),var(--rex-effort-med-laser) !important;
-  color: var(--rex-effort-med) !important;
-  box-shadow: 0 0 9px rgba(88,166,255,0.18),0 1px 4px rgba(0,0,0,0.24) !important;
-  &::before {
-    display: block !important;
-    background-color: var(--rex-effort-med);
-  }
-}
+  & > [data-composer-control-label]:not([data-composer-secondary-trait]) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box;
+    gap: 4.5px;
+    max-width: 156px;
+    height: 22px;
+    /* 保留底部留白，使图标与文字光学居中 */
+    padding: 0 8px 2px 6px !important;
+    color: var(--rex-effort-color,var(--rex-text)) !important;
+    font-size: 11.5px;
+    font-weight: var(--rex-effort-weight,500);
+    line-height: 1;
+    white-space: nowrap;
+    text-box: normal !important;
 
-[data-chat-provider-model-picker="true"]:is([aria-label*=", High"],[aria-label*="· High"],[aria-label="High"]):not([aria-label*=", Extra High"]):not([aria-label*="· Extra High"]):not([aria-label="Extra High"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  background-image: linear-gradient(var(--rex-laser-surface),var(--rex-laser-surface)),var(--rex-effort-high-laser) !important;
-  color: var(--rex-effort-high) !important;
-  box-shadow: 0 0 9px rgba(255,123,114,0.18),0 1px 4px rgba(0,0,0,0.24) !important;
-  &::before {
-    display: block !important;
-    background-color: var(--rex-effort-high);
-    opacity: 1;
-  }
-}
-
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Extra High"],[aria-label*="· Extra High"],[aria-label="Extra High"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  background-image: linear-gradient(var(--rex-laser-surface),var(--rex-laser-surface)),var(--rex-effort-xhigh-laser) !important;
-  color: var(--rex-effort-xhigh) !important;
-  box-shadow: 0 0 9px rgba(227,179,65,0.16),0 1px 4px rgba(0,0,0,0.24) !important;
-  &::before {
-    display: block !important;
-    background-color: var(--rex-effort-xhigh);
-    opacity: 1;
-  }
-}
-
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Max"],[aria-label*="· Max"],[aria-label="Max"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  background-image: linear-gradient(var(--rex-laser-surface),var(--rex-laser-surface)),var(--rex-effort-max-laser) !important;
-  color: var(--rex-effort-max) !important;
-  box-shadow: 0 0 9px rgba(188,140,255,0.18),0 1px 4px rgba(0,0,0,0.24) !important;
-  &::before {
-    display: block !important;
-    background-color: var(--rex-effort-max);
-    opacity: 1;
-  }
-}
-
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Extra"],[aria-label*="· Extra"],[aria-label="Extra"],[aria-label*=", Ultra"],[aria-label*="· Ultra"],[aria-label="Ultra"],[aria-label="Ultrathink"]):not([aria-label*=", Extra High"]):not([aria-label*="· Extra High"]):not([aria-label="Extra High"]) {
-  & [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-    border: 1px solid transparent !important;
-    background-color: transparent !important;
-    background-image: linear-gradient(var(--rex-laser-surface),var(--rex-laser-surface)),var(--rex-laser-grad) !important;
-    background-size: 100% 100%,260% 260% !important;
-    background-origin: padding-box,border-box !important;
-    background-clip: padding-box,border-box !important;
-    color: var(--rex-laser-text) !important;
-    font-weight: 600 !important;
-    box-shadow: var(--rex-laser-glow) !important;
-    animation: rex-laser-flow 4.2s ease-in-out infinite !important;
     &::before {
-      display: block !important;
-      opacity: 1;
-      background-color: transparent !important;
-      background-image: var(--rex-laser-grad) !important;
-      background-size: 260% 260% !important;
-      animation: rex-laser-flow 4.2s ease-in-out infinite !important;
+      content: var(--rex-effort-symbol,none);
+      flex: 0 0 12px;
+      height: 12px;
+      background: var(--rex-effort-icon-fill,currentColor);
+      background-size: 260% 260%;
+      animation: var(--rex-effort-icon-animation,none);
+      -webkit-mask: var(--rex-effort-mask) center / contain no-repeat;
     }
   }
-  &:is(:hover,[data-popup-open]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-    background-image: linear-gradient(var(--rex-laser-surface-hover),var(--rex-laser-surface-hover)),var(--rex-laser-grad) !important;
+
+  /* 背景只跨 effort 与速度两列，其他原生标记顺延到后面的列 */
+  &:has(
+    > :is([data-composer-control-label]:not([data-composer-secondary-trait]),[data-composer-effort-glyph]) + svg.lucide-zap,
+    > :is([data-composer-control-label]:not([data-composer-secondary-trait]),[data-composer-effort-glyph]) + span > svg.lucide-zap + svg.lucide-zap
+  ) {
+    display: grid;
+    grid-auto-flow: column;
+    isolation: isolate;
+
+    &::after {
+      content: "";
+      grid-area: 1 / 1 / 2 / 3;
+      align-self: center;
+      height: 22px;
+      z-index: -1;
+    }
+
+    & > :is([data-composer-control-label]:not([data-composer-secondary-trait]),[data-composer-effort-glyph]) {
+      grid-area: 1 / 1;
+      padding-inline-end: 0 !important;
+    }
+
+    & > [data-composer-control-label]:not([data-composer-secondary-trait]) {
+      border-color: transparent;
+      background: none;
+      box-shadow: none;
+      animation: none;
+    }
+
+    & > [data-composer-effort-glyph] {
+      margin-inline-start: 7px;
+    }
+
+    & > :is(svg.lucide-zap,span:has(> svg.lucide-zap + svg.lucide-zap)) {
+      grid-area: 1 / 2;
+      box-sizing: border-box;
+      height: 16px;
+      width: 21px;
+      margin-inline-end: 3px !important;
+      border-inline-start: 1px solid color-mix(in srgb,currentColor 23%,transparent);
+      border-start-end-radius: 4px;
+      border-end-end-radius: 4px;
+      color: var(--rex-effort-color,var(--rex-accent-link)) !important;
+      background-color: color-mix(in srgb,currentColor 9%,transparent);
+    }
+
+    & > svg.lucide-zap {
+      padding-inline: 4px;
+      fill: none !important;
+      stroke-width: 2;
+    }
+
+    & > span:has(> svg.lucide-zap + svg.lucide-zap) {
+      width: 24px;
+
+      & > svg {
+        inset-block-start: 2px;
+        translate: 3px;
+        color: inherit !important;
+      }
+    }
+  }
+
+  & > [data-composer-control-label]:not([data-composer-secondary-trait]),
+  &::after {
+    border: 1px solid var(--rex-effort-border,var(--rex-border));
+    border-radius: 7px;
+    background: var(--rex-effort-background,color-mix(in srgb,var(--rex-text) 6%,transparent));
+    background-size: 100% 100%,260% 260%;
+    background-origin: padding-box,border-box;
+    background-clip: padding-box,border-box;
+    box-shadow: var(--rex-effort-shadow,none);
+    animation: var(--rex-effort-animation,none);
   }
 }
 
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Off"],[aria-label*="· Off"],[aria-label="Off"],[aria-label*=", None"],[aria-label*="· None"],[aria-label="None"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait]) {
-  color: var(--rex-muted) !important;
-}
+[data-chat-provider-model-picker] {
+  --rex-effort-background: linear-gradient(var(--rex-effort-surface,var(--rex-laser-surface)),var(--rex-effort-surface,var(--rex-laser-surface))),var(--rex-effort-rim);
+  --rex-effort-shadow: var(--rex-effort-halo,0 0 9px color-mix(in srgb,var(--rex-effort-color) 18%,transparent),0 1px 4px #0004);
+  --rex-effort-animation: rex-laser-flow var(--rex-effort-duration,4.5s) ease-in-out infinite;
 
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Off"],[aria-label*="· Off"],[aria-label="Off"],[aria-label*=", None"],[aria-label*="· None"],[aria-label="None"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  display: block !important;
-  opacity: 0.72;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='m5.6 5.6 12.8 12.8'/%3E%3C/svg%3E") center / contain no-repeat;
+  &:is([aria-label*=", Low"],[aria-label*="· Low"],[aria-label="Low"],[aria-label*=", Minimal"],[aria-label*="· Minimal"],[aria-label="Minimal"]) {
+    --rex-effort-color: var(--rex-effort-low);
+    --rex-effort-rim: var(--rex-effort-low-laser);
+    --rex-effort-border: transparent;
+    --rex-effort-weight: 600;
+  }
+
+  &:is([aria-label*=", Medium"],[aria-label*="· Medium"],[aria-label="Medium"]) {
+    --rex-effort-color: var(--rex-effort-med);
+    --rex-effort-rim: var(--rex-effort-med-laser);
+    --rex-effort-border: transparent;
+    --rex-effort-weight: 600;
+  }
+
+  &:is([aria-label*=", High"],[aria-label*="· High"],[aria-label="High"]) {
+    --rex-effort-color: var(--rex-effort-high);
+    --rex-effort-rim: var(--rex-effort-high-laser);
+    --rex-effort-border: transparent;
+    --rex-effort-weight: 600;
+  }
+
+  &:is([aria-label*=", Max"],[aria-label*="· Max"],[aria-label="Max"]) {
+    --rex-effort-color: var(--rex-effort-max);
+    --rex-effort-rim: var(--rex-effort-max-laser);
+    --rex-effort-border: transparent;
+    --rex-effort-weight: 600;
+  }
+
+  &:is([aria-label*=", Extra"],[aria-label*="· Extra"],[aria-label="Extra"],[aria-label*=", Ultra"],[aria-label*="· Ultra"],[aria-label="Ultra"],[aria-label="Ultrathink"]):not(:is([aria-label*=", Extra High"],[aria-label*="· Extra High"],[aria-label="Extra High"])) {
+    --rex-effort-color: var(--rex-laser-text);
+    --rex-effort-rim: var(--rex-laser-grad);
+    --rex-effort-border: transparent;
+    --rex-effort-weight: 600;
+    --rex-effort-icon-fill: var(--rex-laser-grad);
+    --rex-effort-icon-animation: var(--rex-effort-animation);
+    --rex-effort-halo: var(--rex-laser-glow);
+    --rex-effort-duration: 4.2s;
+
+    &:is(:hover,[data-popup-open]) {
+      --rex-effort-surface: var(--rex-laser-surface-hover);
+    }
+  }
+
+  &:is([aria-label*=", Extra High"],[aria-label*="· Extra High"],[aria-label="Extra High"]) {
+    --rex-effort-color: var(--rex-effort-xhigh);
+    --rex-effort-rim: var(--rex-effort-xhigh-laser);
+    --rex-effort-border: transparent;
+    --rex-effort-weight: 600;
+  }
+
+  &:is([aria-label*=", Off"],[aria-label*="· Off"],[aria-label="Off"],[aria-label*=", None"],[aria-label*="· None"],[aria-label="None"]) {
+    --rex-effort-color: var(--rex-muted);
+    --rex-effort-symbol: "";
+    --rex-effort-halo: none;
+    --rex-effort-animation: none;
+    --rex-effort-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='m5.6 5.6 12.8 12.8'/%3E%3C/svg%3E");
+  }
 }
 
 /* 共享 Effort 图标 SVG 遮罩（弹窗与底部栏复用） */
+[data-model-picker-effort] [data-effort-level]::before {
+  -webkit-mask: var(--rex-effort-mask) center / contain no-repeat;
+}
+
 [data-model-picker-effort] [data-effort-level]:nth-of-type(1)::before,
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Low"],[aria-label*="· Low"],[aria-label="Low"],[aria-label*=", Minimal"],[aria-label*="· Minimal"],[aria-label="Minimal"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z'/%3E%3Cpath d='M16 8 2 22'/%3E%3Cpath d='M17.5 15H9'/%3E%3C/svg%3E") center / contain no-repeat;
+[data-chat-provider-model-picker]:is([aria-label*=", Low"],[aria-label*="· Low"],[aria-label="Low"],[aria-label*=", Minimal"],[aria-label*="· Minimal"],[aria-label="Minimal"]) {
+  --rex-effort-symbol: "";
+  --rex-effort-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z'/%3E%3Cpath d='M16 8 2 22'/%3E%3Cpath d='M17.5 15H9'/%3E%3C/svg%3E");
 }
 
 [data-model-picker-effort] [data-effort-level]:nth-of-type(2)::before,
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Medium"],[aria-label*="· Medium"],[aria-label="Medium"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z'/%3E%3Cpath d='M20 3v4'/%3E%3Cpath d='M22 5h-4'/%3E%3C/svg%3E") center / contain no-repeat;
+[data-chat-provider-model-picker]:is([aria-label*=", Medium"],[aria-label*="· Medium"],[aria-label="Medium"]) {
+  --rex-effort-symbol: "";
+  --rex-effort-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z'/%3E%3Cpath d='M20 3v4'/%3E%3Cpath d='M22 5h-4'/%3E%3C/svg%3E");
 }
 
 [data-model-picker-effort] [data-effort-level]:nth-of-type(3)::before,
-[data-chat-provider-model-picker="true"]:is([aria-label*=", High"],[aria-label*="· High"],[aria-label="High"]):not([aria-label*=", Extra High"]):not([aria-label*="· Extra High"]):not([aria-label="Extra High"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'/%3E%3C/svg%3E") center / contain no-repeat;
+[data-chat-provider-model-picker]:is([aria-label*=", High"],[aria-label*="· High"],[aria-label="High"]) {
+  --rex-effort-symbol: "";
+  --rex-effort-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'/%3E%3C/svg%3E");
 }
 
 [data-model-picker-effort] [data-effort-level]:is(:nth-of-type(4),:nth-of-type(n+6))::before,
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Extra"],[aria-label*="· Extra"],[aria-label="Extra"],[aria-label*=", Ultra"],[aria-label*="· Ultra"],[aria-label="Ultra"],[aria-label="Ultrathink"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M13 2 4 14h6l-1 8 9-12h-6l1-8z'/%3E%3C/svg%3E") center / contain no-repeat;
+[data-chat-provider-model-picker]:is([aria-label*=", Extra"],[aria-label*="· Extra"],[aria-label="Extra"],[aria-label*=", Ultra"],[aria-label*="· Ultra"],[aria-label="Ultra"],[aria-label="Ultrathink"]) {
+  --rex-effort-symbol: "";
+  --rex-effort-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M13 2 4 14h6l-1 8 9-12h-6l1-8z'/%3E%3C/svg%3E");
 }
 
 [data-model-picker-effort] [data-effort-level]:nth-of-type(5)::before,
-[data-chat-provider-model-picker="true"]:is([aria-label*=", Max"],[aria-label*="· Max"],[aria-label="Max"]) [data-composer-control-label="true"]:not([data-composer-secondary-trait])::before {
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z'/%3E%3Cpath d='M5 21h14'/%3E%3C/svg%3E") center / contain no-repeat;
+[data-chat-provider-model-picker]:is([aria-label*=", Max"],[aria-label*="· Max"],[aria-label="Max"]) {
+  --rex-effort-symbol: "";
+  --rex-effort-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z'/%3E%3Cpath d='M5 21h14'/%3E%3C/svg%3E");
 }
 
 /* =========================================================

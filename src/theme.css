@@ -35,6 +35,10 @@
   --rex-border-strong: rgba(255,255,255,0.14);
   --rex-glass-rim: linear-gradient(90deg,transparent 4%,rgba(255,255,255,0.08) 22%,rgba(255,255,255,0.34) 50%,rgba(255,255,255,0.08) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(255,255,255,0.05) 24%,rgba(255,255,255,0.22) 50%,rgba(255,255,255,0.05) 76%,transparent 94%),linear-gradient(rgba(255,255,255,0.085),rgba(255,255,255,0.085));
   --rex-glass-rim-focus: linear-gradient(90deg,transparent 4%,rgba(255,255,255,0.10) 22%,rgba(255,255,255,0.42) 50%,rgba(255,255,255,0.10) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(255,255,255,0.07) 24%,rgba(255,255,255,0.26) 50%,rgba(255,255,255,0.07) 76%,transparent 94%),linear-gradient(rgba(255,255,255,0.14),rgba(255,255,255,0.14));
+  --rex-rim-border: rgba(255,255,255,0.085);
+  --rex-rim-border-focus: rgba(255,255,255,0.14);
+  --rex-glass-glint: linear-gradient(90deg,transparent 4%,rgba(255,255,255,0.08) 22%,rgba(255,255,255,0.34) 50%,rgba(255,255,255,0.08) 78%,transparent 96%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 6%,rgba(255,255,255,0.05) 24%,rgba(255,255,255,0.22) 50%,rgba(255,255,255,0.05) 76%,transparent 94%) bottom / 100% 1px no-repeat;
+  --rex-glass-glint-focus: linear-gradient(90deg,transparent 4%,rgba(255,255,255,0.10) 22%,rgba(255,255,255,0.42) 50%,rgba(255,255,255,0.10) 78%,transparent 96%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 6%,rgba(255,255,255,0.07) 24%,rgba(255,255,255,0.26) 50%,rgba(255,255,255,0.07) 76%,transparent 94%) bottom / 100% 1px no-repeat;
   --rex-divider-rim: linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.17) 8%,rgba(255,255,255,0.22) 26%,rgba(255,255,255,0.44) 50%,rgba(255,255,255,0.22) 74%,rgba(255,255,255,0.17) 92%,transparent 100%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.09) 8%,rgba(255,255,255,0.12) 26%,rgba(255,255,255,0.22) 50%,rgba(255,255,255,0.12) 74%,rgba(255,255,255,0.09) 92%,transparent 100%) bottom / 100% 1px no-repeat;
   --rex-pane-shadow: 0 0 0 1px rgba(0,0,0,0.68),0 10px 30px rgba(0,0,0,0.42);
   --rex-tab-active-bg: rgba(36,41,48,0.86);
@@ -122,6 +126,10 @@
   --rex-border-strong: rgba(31,35,40,0.14);
   --rex-glass-rim: linear-gradient(90deg,transparent 4%,rgba(15,23,42,0.10) 22%,rgba(15,23,42,0.28) 50%,rgba(15,23,42,0.10) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(15,23,42,0.07) 24%,rgba(15,23,42,0.20) 50%,rgba(15,23,42,0.07) 76%,transparent 94%),linear-gradient(rgba(15,23,42,0.12),rgba(15,23,42,0.12));
   --rex-glass-rim-focus: linear-gradient(90deg,transparent 4%,rgba(9,105,218,0.14) 22%,rgba(9,105,218,0.38) 50%,rgba(9,105,218,0.14) 78%,transparent 96%),linear-gradient(90deg,transparent 6%,rgba(9,105,218,0.08) 24%,rgba(9,105,218,0.24) 50%,rgba(9,105,218,0.08) 76%,transparent 94%),linear-gradient(rgba(9,105,218,0.18),rgba(9,105,218,0.18));
+  --rex-rim-border: rgba(15,23,42,0.12);
+  --rex-rim-border-focus: rgba(9,105,218,0.18);
+  --rex-glass-glint: linear-gradient(90deg,transparent 4%,rgba(15,23,42,0.10) 22%,rgba(15,23,42,0.28) 50%,rgba(15,23,42,0.10) 78%,transparent 96%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 6%,rgba(15,23,42,0.07) 24%,rgba(15,23,42,0.20) 50%,rgba(15,23,42,0.07) 76%,transparent 94%) bottom / 100% 1px no-repeat;
+  --rex-glass-glint-focus: linear-gradient(90deg,transparent 4%,rgba(9,105,218,0.14) 22%,rgba(9,105,218,0.38) 50%,rgba(9,105,218,0.14) 78%,transparent 96%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 6%,rgba(9,105,218,0.08) 24%,rgba(9,105,218,0.24) 50%,rgba(9,105,218,0.08) 76%,transparent 94%) bottom / 100% 1px no-repeat;
   --rex-divider-rim: linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.18) 8%,rgba(15,23,42,0.22) 26%,rgba(15,23,42,0.36) 50%,rgba(15,23,42,0.22) 74%,rgba(15,23,42,0.18) 92%,transparent 100%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.09) 8%,rgba(15,23,42,0.12) 26%,rgba(15,23,42,0.20) 50%,rgba(15,23,42,0.12) 74%,rgba(15,23,42,0.09) 92%,transparent 100%) bottom / 100% 1px no-repeat;
   --rex-pane-shadow: 0 0 0 1px rgba(15,23,42,0.075),0 2px 12px rgba(15,23,42,0.05);
   --rex-tab-active-bg: #FFFFFF;
@@ -199,7 +207,6 @@ body {
   background-color: var(--rex-shell) !important;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 svg.lucide {
@@ -265,26 +272,16 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   background: var(--rex-shell) !important;
 }
 
-[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before,[data-thread-details-card]::before,main[data-slot="sidebar-inset"]::before {
+[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before,[data-thread-details-card]::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   border-radius: inherit;
-  padding: 1px;
-  background: var(--rex-glass-rim);
-  background-size: 100% 12px,100% 12px,100% 100%;
-  background-position: top center,bottom center,center;
-  background-repeat: no-repeat;
-  -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  mask-composite: exclude;
-}
-
-main[data-slot="sidebar-inset"]::before {
-  display: none;
-  z-index: 40;
+  border: 1px solid var(--rex-rim-border);
+  background: var(--rex-glass-glint);
+  background-origin: border-box;
+  background-clip: border-box;
 }
 
 @media (min-width: 768px) {
@@ -296,14 +293,17 @@ main[data-slot="sidebar-inset"]::before {
     max-height: calc(100svh - 14px) !important;
     align-self: stretch !important;
     border-radius: 12px !important;
-    border: none !important;
+    /* 用 border-box 渐变直接绘制 1px 折光外框，避免全屏 mask-composite 叠加层在滚动时触发合成闪屏 */
+    border: 1px solid transparent !important;
     background-color: var(--rex-canvas) !important;
+    background-image: linear-gradient(var(--rex-canvas),var(--rex-canvas)),var(--rex-glass-rim) !important;
+    background-origin: padding-box,border-box,border-box,border-box !important;
+    background-clip: padding-box,border-box,border-box,border-box !important;
+    background-size: 100% 100%,100% 12px,100% 12px,100% 100% !important;
+    background-position: center,top center,bottom center,center !important;
+    background-repeat: no-repeat !important;
     box-shadow: var(--rex-pane-shadow) !important;
-    overflow: hidden !important;
-  }
-
-  main[data-slot="sidebar-inset"]::before {
-    display: block;
+    overflow: clip !important;
   }
 
   [data-slot="sidebar"]:is([data-state="collapsed"],[data-sidebar-state="collapsed"]) ~ main[data-slot="sidebar-inset"],[data-slot="sidebar-wrapper"][data-sidebar-state="collapsed"] main[data-slot="sidebar-inset"] {
@@ -396,6 +396,12 @@ main[data-slot="sidebar-inset"]::before {
 [data-thread-item] [data-sidebar-row],[data-slot="sidebar"] [data-sidebar-row] {
   border-radius: 12px !important;
   transition: background-color 0.15s ease,box-shadow 0.15s ease !important;
+}
+
+/* 左侧栏会话标题收小至 0.8125rem（默认 13px），随界面字号设置同步缩放 */
+[data-thread-item] [data-sidebar-row] .text-sm {
+  font-size: 0.8125rem !important;
+  line-height: 1.4 !important;
 }
 
 [data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
@@ -522,21 +528,21 @@ main[data-slot="sidebar-inset"]::before {
 }
 
 [data-work-entry-id] > div.cursor-auto .chat-markdown {
-  font-size: 13.5px;
+  font-size: 0.84375rem;
   line-height: 1.6;
   letter-spacing: normal;
 }
 
 :is([data-message-role="assistant"],[data-timeline-row-kind="proposed-plan"]) .chat-markdown:not(.user-message-markdown) {
   font-family: var(--rex-font-serif);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.72;
   letter-spacing: -0.003em;
 }
 
 .chat-markdown.user-message-markdown {
   font-family: var(--font-sans);
-  font-size: 14.5px;
+  font-size: 0.90625rem;
   line-height: 1.65;
 }
 
@@ -611,9 +617,9 @@ main[data-slot="sidebar-inset"]::before {
   --chat-composer-glass-surface: var(--rex-composer-bg) !important;
   --chat-composer-outline: transparent !important;
   --chat-composer-highlight: transparent !important;
-  --glass-opacity: 72% !important;
-  --glass-blur: 24px !important;
-  --glass-saturation: 160% !important;
+  --glass-opacity: 84% !important;
+  --glass-blur: 10px !important;
+  --glass-saturation: 112% !important;
 }
 
 :root:not(.dark) [data-chat-composer-form],:root:not(.dark) [data-chat-composer-form] :is([data-chat-composer-main-surface="true"],[data-slot="composer-host"]) {
@@ -621,24 +627,19 @@ main[data-slot="sidebar-inset"]::before {
 }
 
 [data-slot="composer-host"]::after,[data-chat-composer-main-surface="true"]::after {
-  border: none !important;
-  padding: 1px !important;
-  background: var(--rex-glass-rim) !important;
-  background-size: 100% 12px,100% 12px,100% 100% !important;
-  background-position: top center,bottom center,center !important;
-  background-repeat: no-repeat !important;
-  -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: opacity 0.2s ease,box-shadow 0.2s ease;
+  border: 1px solid var(--rex-rim-border) !important;
+  padding: 0 !important;
+  background: var(--rex-glass-glint) !important;
+  background-origin: border-box !important;
+  background-clip: border-box !important;
+  transition: border-color 0.2s ease,opacity 0.2s ease;
 }
 
 [data-chat-composer-form]:has([data-slot="composer-host"]:focus-within) [data-slot="composer-host"]::after,[data-chat-composer-form]:has([data-slot="composer-host"]:focus-within) [data-chat-composer-main-surface="true"]::after,[data-slot="composer-host"]:focus-within::after {
-  background: var(--rex-glass-rim-focus) !important;
-  background-size: 100% 12px,100% 12px,100% 100% !important;
-  background-position: top center,bottom center,center !important;
-  background-repeat: no-repeat !important;
+  border-color: var(--rex-rim-border-focus) !important;
+  background: var(--rex-glass-glint-focus) !important;
+  background-origin: border-box !important;
+  background-clip: border-box !important;
 }
 
 [data-chat-composer-form]:not(:has([data-composer-banner-surface="attached"])) [data-slot="composer-host"],[data-chat-composer-form]:has([data-composer-banner-surface="attached"]) [data-chat-composer-main-surface="true"] {

@@ -1274,3 +1274,20 @@ diffs-container,[data-diffs-header],[data-diff],[data-file] {
   box-shadow: none !important;
   outline: none !important;
 }
+
+/* =========================================================
+   10. 右侧面板默认自适应宽度（占主工作区 65%，主对话区保底 380px）
+   ========================================================= */
+[data-preview-panel-mode="inline"][data-preview-panel-maximized="false"]:not([data-workspace-unavailable="true"]) {
+  width: max(var(--resizable-width,540px),min(65%,calc(100% - 380px))) !important;
+}
+
+[data-preview-panel-mode="inline"][data-preview-panel-maximized="false"]:not([data-workspace-unavailable="true"]) > div:not([role="separator"]) > div {
+  width: 100% !important;
+}
+
+[data-panel-animations="true"] [data-preview-panel-mode="inline"][data-preview-panel-maximized="false"]:not([data-workspace-unavailable="true"]) {
+  @starting-style {
+    width: 0px !important;
+  }
+}

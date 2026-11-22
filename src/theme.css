@@ -59,8 +59,8 @@
   --rex-focus-border: rgba(88,166,255,0.52);
   --rex-focus-glow-search: inset 0 0 0 1px rgba(88,166,255,0.46),inset 0 0 8px rgba(47,129,247,0.08),0 0 10px 0.5px rgba(47,129,247,0.24);
   --rex-focus-glow-input: 0 0 0 1px rgba(88,166,255,0.14),0 0 10px 0.5px rgba(47,129,247,0.24);
-  --rex-shadow-composer: 0 6px 22px rgba(0,0,0,0.28);
-  --rex-shadow-composer-focus: 0 8px 28px rgba(0,0,0,0.36),0 0 18px rgba(47,129,247,0.12);
+  --rex-shadow-composer: none;
+  --rex-shadow-composer-focus: none;
   --rex-shadow-pop: 0 14px 40px rgba(0,0,0,0.56),0 0 0 1px rgba(255,255,255,0.09);
   --rex-off: #2D333B;
   --rex-off-fg: #6E7681;
@@ -643,10 +643,6 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   backface-visibility: hidden;
   will-change: transform;
   isolation: isolate;
-}
-
-:is(:root[style*="--glass-blur: 0px"],:root[style*="--glass-blur:0px"]) [data-slot="composer-context-strip"] {
-  background: var(--rex-surface) !important;
 }
 
 :is(:root[style*="--glass-blur: 0px"],:root[style*="--glass-blur:0px"]) [data-scroll-to-end="true"] {

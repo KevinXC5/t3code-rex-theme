@@ -303,7 +303,10 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   background: var(--rex-canvas) !important;
 }
 
+/* 收紧内嵌面板标题栏至 calc(topbar - 16px)（默认 36px），抵消顶部 8px 外框下沉，与左侧交通灯及 T3 Code 中心线像素级齐平 */
 [data-chat-header] {
+  height: calc(var(--workspace-topbar-height) - 16px) !important;
+  min-height: calc(var(--workspace-topbar-height) - 16px) !important;
   background: var(--rex-canvas) !important;
   border-bottom-color: var(--rex-border) !important;
   backdrop-filter: none !important;

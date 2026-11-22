@@ -515,7 +515,7 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   filter: none !important;
 }
 
-/* 将 Working 分组（含未点击确认的 Done 线程）置顶，并保持 Snoozed / Settled 分组沉底 */
+/* 将 Working 分组（含待输入/待审批/失败/限额/唤醒/未读完成等待处理线程）置顶，并保持 Snoozed / Settled 分组沉底 */
 [data-slot="sidebar"] [data-testid="sidebar-working-header"] {
   order: -4;
   margin-top: 0 !important;
@@ -525,11 +525,11 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   order: -3;
 }
 
-[data-slot="sidebar"] [data-testid="sidebar-pinned-divider"] ~ [data-thread-item]:has([data-sidebar-row]:not([data-sidebar-parent]) .font-medium.text-success-foreground) {
+[data-slot="sidebar"] [data-testid="sidebar-pinned-divider"] ~ [data-thread-item]:has([data-sidebar-row]:not([data-sidebar-parent]) .font-medium:is(.text-success-foreground,.text-indigo-600,.text-warning-foreground,.text-error-foreground,.text-guest-foreground)) {
   order: -2;
 }
 
-[data-slot="sidebar"] :is([data-testid="sidebar-pinned-divider"] ~ [data-thread-item]:has([data-sidebar-row]:not([data-sidebar-parent]) .font-medium.text-success-foreground):not(:has(~ [data-thread-item] [data-sidebar-row]:not([data-sidebar-parent]) .font-medium.text-success-foreground)),ul:not(:has([data-testid="sidebar-pinned-divider"] ~ [data-thread-item] [data-sidebar-row]:not([data-sidebar-parent]) .font-medium.text-success-foreground)) > [data-thread-item]:has([data-sidebar-parent="shelf:working"]):not(:has(~ [data-thread-item] [data-sidebar-parent="shelf:working"]))) {
+[data-slot="sidebar"] :is([data-testid="sidebar-pinned-divider"] ~ [data-thread-item]:has([data-sidebar-row]:not([data-sidebar-parent]) .font-medium:is(.text-success-foreground,.text-indigo-600,.text-warning-foreground,.text-error-foreground,.text-guest-foreground)):not(:has(~ [data-thread-item] [data-sidebar-row]:not([data-sidebar-parent]) .font-medium:is(.text-success-foreground,.text-indigo-600,.text-warning-foreground,.text-error-foreground,.text-guest-foreground))),ul:not(:has([data-testid="sidebar-pinned-divider"] ~ [data-thread-item] [data-sidebar-row]:not([data-sidebar-parent]) .font-medium:is(.text-success-foreground,.text-indigo-600,.text-warning-foreground,.text-error-foreground,.text-guest-foreground))) > [data-thread-item]:has([data-sidebar-parent="shelf:working"]):not(:has(~ [data-thread-item] [data-sidebar-parent="shelf:working"]))) {
   position: relative;
   padding-bottom: 16px !important;
   &::after {

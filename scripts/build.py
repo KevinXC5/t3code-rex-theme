@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC_CSS = ROOT / "src" / "theme.css"
 OUT_JSON = ROOT / "rex.json"
-MAX_CSS_CHARS = 50_000
+MAX_CSS_CHARS = 100_000
 
 
 def minify_css(src: str) -> str:

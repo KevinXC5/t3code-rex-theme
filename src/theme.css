@@ -29,7 +29,7 @@
   --rex-canvas: #15181C;
   --rex-surface: #121519;
   --rex-surface-2: #1C2128;
-  --rex-composer-bg: rgba(28,33,40,0.78);
+  --rex-composer-bg: #1C2128;
   --rex-code-bg: #0C0F14;
   --rex-border: rgba(255,255,255,0.085);
   --rex-border-strong: rgba(255,255,255,0.14);
@@ -42,7 +42,7 @@
   --rex-divider-rim: linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.17) 8%,rgba(255,255,255,0.22) 26%,rgba(255,255,255,0.44) 50%,rgba(255,255,255,0.22) 74%,rgba(255,255,255,0.17) 92%,transparent 100%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.09) 8%,rgba(255,255,255,0.12) 26%,rgba(255,255,255,0.22) 50%,rgba(255,255,255,0.12) 74%,rgba(255,255,255,0.09) 92%,transparent 100%) bottom / 100% 1px no-repeat;
   --rex-pane-shadow: 0 0 0 1px rgba(0,0,0,0.68),0 10px 30px rgba(0,0,0,0.42);
   --rex-tab-active-bg: rgba(36,41,48,0.86);
-  --rex-glass-card-bg: rgba(26,30,36,0.86);
+  --rex-glass-card-bg: #1A1E24;
   --rex-tab-active-shadow: 0 2px 10px rgba(0,0,0,0.38),0 0 0 1px rgba(0,0,0,0.36);
   --rex-accent: #2F81F7;
   --rex-accent-link: #58A6FF;
@@ -120,7 +120,7 @@
   --rex-canvas: #FFFFFF;
   --rex-surface: #F5F6F8;
   --rex-surface-2: #EFEFF2;
-  --rex-composer-bg: rgba(255,255,255,0.84);
+  --rex-composer-bg: #FFFFFF;
   --rex-code-bg: #F6F8FA;
   --rex-border: rgba(31,35,40,0.09);
   --rex-border-strong: rgba(31,35,40,0.14);
@@ -133,7 +133,7 @@
   --rex-divider-rim: linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.18) 8%,rgba(15,23,42,0.22) 26%,rgba(15,23,42,0.36) 50%,rgba(15,23,42,0.22) 74%,rgba(15,23,42,0.18) 92%,transparent 100%) top / 100% 1px no-repeat,linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.09) 8%,rgba(15,23,42,0.12) 26%,rgba(15,23,42,0.20) 50%,rgba(15,23,42,0.12) 74%,rgba(15,23,42,0.09) 92%,transparent 100%) bottom / 100% 1px no-repeat;
   --rex-pane-shadow: 0 0 0 1px rgba(15,23,42,0.075),0 2px 12px rgba(15,23,42,0.05);
   --rex-tab-active-bg: #FFFFFF;
-  --rex-glass-card-bg: rgba(255,255,255,0.96);
+  --rex-glass-card-bg: #FFFFFF;
   --rex-tab-active-shadow: 0 2px 8px rgba(15,23,42,0.08),0 1px 2px rgba(15,23,42,0.05);
   --rex-accent: #0969DA;
   --rex-accent-link: #0969DA;
@@ -272,18 +272,6 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   background: var(--rex-shell) !important;
 }
 
-[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before,[data-thread-details-card]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  border: 1px solid var(--rex-rim-border);
-  background: var(--rex-glass-glint);
-  background-origin: border-box;
-  background-clip: border-box;
-}
-
 @media (min-width: 768px) {
   main[data-slot="sidebar-inset"] {
     position: relative !important;
@@ -388,14 +376,19 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   }
 }
 
-[data-thread-item]:has([aria-current="page"],[aria-current="true"]) {
+[data-thread-item]:has([aria-current="page"],[aria-current="true"],[data-sidebar-row]:is(:focus,:active)) {
   content-visibility: visible !important;
   contain: none !important;
 }
 
+/* 移除 0.15s 背景/阴影过渡拖尾，仅保留轻快的按压缩放，让切换会话 0ms 跟手 */
 [data-thread-item] [data-sidebar-row],[data-slot="sidebar"] [data-sidebar-row] {
   border-radius: 12px !important;
-  transition: background-color 0.15s ease,box-shadow 0.15s ease !important;
+  transition: transform 0.08s cubic-bezier(0.2,0,0,1) !important;
+}
+
+[data-thread-item] [data-sidebar-row]:active:not(:has(button:active)) {
+  transform: scale(0.99);
 }
 
 /* 左侧栏会话标题收小至 0.8125rem（默认 13px），随界面字号设置同步缩放 */
@@ -404,7 +397,9 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   line-height: 1.4 !important;
 }
 
-[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
+/* 结合 :focus / :active 在点击瞬间（0ms）乐观亮起选中态，路由提交后无缝交接给 aria-current */
+[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]),
+[data-thread-item] [data-sidebar-row]:is(:focus,:active:not(:has(button:active))) {
   position: relative !important;
   border-radius: 12px !important;
   background: var(--rex-tab-active-bg) !important;
@@ -412,8 +407,18 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   --tw-ring-shadow: 0 0 #0000 !important;
 }
 
-[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before {
+[data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"])::before,
+[data-thread-item] [data-sidebar-row]:is(:focus,:active:not(:has(button:active)))::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  border: 1px solid var(--rex-rim-border);
+  background: var(--rex-glass-glint);
+  background-origin: border-box;
+  background-clip: border-box;
 }
 
 :root:not(.dark) [data-slot="sidebar"] {
@@ -427,7 +432,8 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   color: #1F2328 !important;
 }
 
-:root:not(.dark) [data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]) {
+:root:not(.dark) [data-slot="sidebar"] [data-sidebar-row]:is([aria-current="page"],[aria-current="true"]),
+:root:not(.dark) [data-thread-item] [data-sidebar-row]:is(:focus,:active:not(:has(button:active))) {
   color: #0F172A !important;
   --muted-foreground: #475569 !important;
   --sidebar-muted-foreground: #475569 !important;
@@ -613,17 +619,39 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
 /* =========================================================
    6. Frosted Glass Composer & Sapphire Squircle Button
    ========================================================= */
-[data-chat-composer-form],[data-chat-composer-form] :is([data-chat-composer-main-surface="true"],[data-slot="composer-host"]) {
+/* 关闭主滚动容器顶部的三层 mask-image（顶栏本身为实色，去遮罩可降低滚屏合成开销） */
+.messages-timeline-scroll.topbar-scroll-fade {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+/* 仅覆盖输入栏底色与边框变量，完整保留原生 --glass-opacity / --glass-blur 随设置页滑块联动 */
+:is([data-chat-composer-overlay="true"],[data-slot="composer-shell"],[data-slot="composer-host"],[data-chat-composer-form],[data-chat-composer-main-surface="true"]) {
   --chat-composer-glass-surface: var(--rex-composer-bg) !important;
   --chat-composer-outline: transparent !important;
   --chat-composer-highlight: transparent !important;
-  --glass-opacity: 84% !important;
-  --glass-blur: 10px !important;
-  --glass-saturation: 112% !important;
 }
 
-:root:not(.dark) [data-chat-composer-form],:root:not(.dark) [data-chat-composer-form] :is([data-chat-composer-main-surface="true"],[data-slot="composer-host"]) {
-  --glass-opacity: 88% !important;
+/* 当用户在「设置 → 外观 → Glass opacity」拉到 100%（实色）时，彻底关闭 backdrop-filter（补齐原生残留的 saturate 通道）并锁定独立 GPU 合成层 */
+:is(:root[style*="--glass-blur: 0px"],:root[style*="--glass-blur:0px"]) :is([data-slot="composer-shell"]::before,[data-slot="composer-host"]::before,[data-chat-composer-main-surface="true"],[data-slot="composer-context-strip"],[data-scroll-to-end="true"],[data-thread-details-card],.dropdown-glass,.surface-glass,.dialog-glass) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+:is(:root[style*="--glass-blur: 0px"],:root[style*="--glass-blur:0px"]) :is([data-slot="composer-shell"],[data-thread-details-panel="inline"]) {
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  will-change: transform;
+  isolation: isolate;
+}
+
+:is(:root[style*="--glass-blur: 0px"],:root[style*="--glass-blur:0px"]) [data-slot="composer-context-strip"] {
+  background: var(--rex-surface) !important;
+}
+
+:is(:root[style*="--glass-blur: 0px"],:root[style*="--glass-blur:0px"]) [data-scroll-to-end="true"] {
+  background: var(--rex-glass-card-bg) !important;
+  box-shadow: var(--rex-tab-active-shadow) !important;
 }
 
 [data-slot="composer-host"]::after,[data-chat-composer-main-surface="true"]::after {
@@ -635,19 +663,19 @@ a:is([aria-label="T3 Code home"],:has(> span > [aria-label="T3"]))::after,[data-
   transition: border-color 0.2s ease,opacity 0.2s ease;
 }
 
-[data-chat-composer-form]:has([data-slot="composer-host"]:focus-within) [data-slot="composer-host"]::after,[data-chat-composer-form]:has([data-slot="composer-host"]:focus-within) [data-chat-composer-main-surface="true"]::after,[data-slot="composer-host"]:focus-within::after {
+[data-slot="composer-host"]:focus-within::after,[data-slot="composer-host"]:focus-within [data-chat-composer-main-surface="true"]::after {
   border-color: var(--rex-rim-border-focus) !important;
   background: var(--rex-glass-glint-focus) !important;
   background-origin: border-box !important;
   background-clip: border-box !important;
 }
 
-[data-chat-composer-form]:not(:has([data-composer-banner-surface="attached"])) [data-slot="composer-host"],[data-chat-composer-form]:has([data-composer-banner-surface="attached"]) [data-chat-composer-main-surface="true"] {
+[data-slot="composer-shell"]:not(:has([data-composer-banner-surface="attached"])) [data-slot="composer-host"],[data-slot="composer-shell"]:has([data-composer-banner-surface="attached"]) [data-chat-composer-main-surface="true"] {
   box-shadow: var(--rex-shadow-composer) !important;
   transition: box-shadow 0.22s ease;
 }
 
-[data-chat-composer-form]:not(:has([data-composer-banner-surface="attached"])) [data-slot="composer-host"]:focus-within,[data-chat-composer-form]:has([data-composer-banner-surface="attached"]) [data-chat-composer-main-surface="true"]:focus-within {
+[data-slot="composer-shell"]:not(:has([data-composer-banner-surface="attached"])) [data-slot="composer-host"]:focus-within,[data-slot="composer-shell"]:has([data-composer-banner-surface="attached"]) [data-chat-composer-main-surface="true"]:focus-within {
   box-shadow: var(--rex-shadow-composer-focus) !important;
 }
 
@@ -1197,17 +1225,27 @@ div:has(> [data-model-picker-effort]) {
   font-size: 12px;
 }
 
+[data-thread-details-panel="inline"] {
+  contain: layout style;
+}
+
 [data-thread-details-card] {
   position: relative !important;
   border-radius: 12px !important;
-  border: none !important;
-  background: var(--rex-glass-card-bg) !important;
+  border: 1px solid var(--rex-rim-border) !important;
+  background: var(--rex-glass-glint) !important;
+  background-color: color-mix(in srgb,var(--rex-glass-card-bg) var(--glass-opacity,80%),transparent) !important;
+  background-origin: border-box !important;
+  background-clip: border-box !important;
   box-shadow: var(--rex-tab-active-shadow) !important;
-  backdrop-filter: none !important;
 }
 
-[data-thread-details-card]::before {
-  z-index: 2;
+/* 移除详情卡内部 ScrollArea 的四向 mask-composite 渐变遮罩，避免嵌套离屏合成面在滚屏时重建闪烁 */
+[data-thread-details-card] [data-slot="scroll-area-viewport"] {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -webkit-mask-composite: initial !important;
+  mask-composite: initial !important;
 }
 
 ::-webkit-scrollbar {
